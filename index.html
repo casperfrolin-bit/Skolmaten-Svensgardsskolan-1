@@ -1,306 +1,176 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Svensgårdsskolan - Skolmaten</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            background: #f2f2f2;
-            color: #222;
-            font-size: 14px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skolmaten</title>
 
-       .top-bar {
-            background: #0066cc;
-            color: white;
-            padding: 12px 0;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-       .top-bar .wrap {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    body {
+      background: #f3f3f3;
+      color: #222;
+    }
 
-       .logo {
-            font-size: 20px;
-            font-weight: bold;
-        }
+    /* TOP BAR */
+    .topbar {
+      background: #00213d;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      color: white;
+    }
 
-       .logo span {
-            font-weight: normal;
-            opacity: 0.9;
-        }
+    .logo {
+      font-weight: bold;
+      margin-right: 20px;
+    }
 
-       .school-header {
-            background: white;
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
-        }
+    .search {
+      flex: 1;
+    }
 
-       .wrap {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+    .search input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: none;
+    }
 
-       .school-header h1 {
-            margin: 0 0 5px 0;
-            font-size: 24px;
-            font-weight: normal;
-            color: #0066cc;
-        }
+    .top-links {
+      margin-left: 20px;
+      display: flex;
+      gap: 15px;
+      font-size: 14px;
+    }
 
-       .school-header .meta {
-            color: #666;
-            font-size: 13px;
-        }
+    /* CONTENT */
+    .container {
+      width: 500px;
+      margin: 50px auto;
+    }
 
-       .week-tabs {
-            background: white;
-            border-bottom: 2px solid #ddd;
-            margin-top: 15px;
-            display: flex;
-            gap: 0;
-            overflow-x: auto;
-        }
+    .school-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-       .week-tab {
-            padding: 10px 20px;
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-size: 14px;
-            color: #666;
-            border-bottom: 3px solid transparent;
-            white-space: nowrap;
-        }
+    .week {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #333;
+    }
 
-       .week-tab:hover {
-            background: #f8f8f8;
-        }
+    .day {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
 
-       .week-tab.active {
-            color: #0066cc;
-            border-bottom-color: #0066cc;
-            font-weight: bold;
-        }
+    .day h3 {
+      margin-bottom: 5px;
+    }
 
-       .content {
-            max-width: 960px;
-            margin: 20px auto;
-            padding: 0 15px;
-        }
+    .date {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
 
-       .week-nav-bar {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            padding: 10px 15px;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .meal {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
 
-       .week-nav-bar button {
-            background: #0066cc;
-            color: white;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 13px;
-        }
+    .footer-text {
+      color: #4d7c8a;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 30px;
+    }
 
-       .week-nav-bar button:hover {
-            background: #0052a3;
-        }
-
-       .week-title {
-            font-weight: bold;
-            font-size: 15px;
-        }
-
-       .day-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            margin-bottom: 8px;
-        }
-
-       .day-card.today {
-            border-left: 4px solid #ff9900;
-        }
-
-       .day-header {
-            background: #f8f8f8;
-            padding: 10px 15px;
-            border-bottom: 1px solid #eee;
-            font-weight: bold;
-            color: #333;
-            display: flex;
-            justify-content: space-between;
-        }
-
-       .day-header.today {
-            background: #fff8e1;
-        }
-
-       .day-date {
-            font-weight: normal;
-            color: #666;
-            font-size: 13px;
-        }
-
-       .day-content {
-            padding: 12px 15px;
-        }
-
-       .meal-item {
-            padding: 6px 0;
-            line-height: 1.5;
-        }
-
-       .meal-item:not(:last-child) {
-            border-bottom: 1px dotted #e5e5e5;
-        }
-
-       .meal-label {
-            color: #999;
-            font-size: 11px;
-            text-transform: uppercase;
-            margin-bottom: 2px;
-        }
-
-       .empty-day {
-            color: #999;
-            font-style: italic;
-            padding: 12px 15px;
-        }
-
-       .footer {
-            text-align: center;
-            padding: 30px 15px;
-            color: #999;
-            font-size: 12px;
-        }
-
-        @media (max-width: 600px) {
-           .week-tab {
-                padding: 10px 12px;
-                font-size: 13px;
-            }
-           .school-header h1 {
-                font-size: 20px;
-            }
-        }
-    </style>
+    .week-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      color: #1d6f8f;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="top-bar">
-        <div class="wrap">
-            <div class="logo">Skolmaten<span>.se</span></div>
-            <div style="font-size: 13px;">Sök skola</div>
-        </div>
+
+  <div class="topbar">
+    <div class="logo">Skolmaten</div>
+
+    <div class="search">
+      <input type="text" placeholder="Sök">
     </div>
 
-    <div class="school-header">
-        <div class="wrap">
-            <h1>Svensgårdsskolan</h1>
-            <div class="meta">Helsingborg · Grundskola</div>
-        </div>
+    <div class="top-links">
+      <span>Svenska</span>
+      <span>Logga in</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="school-name">Svensgårdsskolan</div>
+    <div class="week">Vecka 19</div>
+
+    <div class="day">
+      <h3>Måndag</h3>
+      <div class="date">2026-05-04</div>
+
+      <div class="meal">
+        Fiskpinnar, serveras med remouladsås, kokt potatis och grönsaksbuffé
+      </div>
+
+      <div class="meal">
+        Couscoussnitzel serveras med rostad potatis, sås och grönsaksbuffé
+      </div>
     </div>
 
-    <div class="wrap">
-        <div class="week-tabs" id="weekTabs"></div>
+    <div class="day">
+      <h3>Tisdag</h3>
+      <div class="date">2026-05-05</div>
+
+      <div class="meal">
+        Kryddig korvgryta på svensk köttråvara med pasta samt grönsaksbuffé
+      </div>
+
+      <div class="meal">
+        Korvgryta med bulgur samt grönsaksbuffé
+      </div>
     </div>
 
-    <div class="content">
-        <div class="week-nav-bar">
-            <button id="prevBtn">&laquo; Föregående vecka</button>
-            <div class="week-title" id="weekTitle">Vecka 20</div>
-            <button id="nextBtn">Nästa vecka &raquo;</button>
-        </div>
+    <div class="day">
+      <h3>Onsdag</h3>
+      <div class="date">2026-05-06</div>
 
-        <div id="menuContainer"></div>
+      <div class="meal">
+        Tacobuffé
+      </div>
+
+      <div class="meal">
+        Stekt trippelins serveras med grönsaksbuffé
+      </div>
     </div>
 
-    <div class="footer">
-        <p>Detta är en fristående kopia inspirerad av Skolmaten.se</p>
+    <div class="week-nav">
+      <span>← Föregående vecka</span>
+      <span>Nästa vecka →</span>
     </div>
 
-    <script>
-        // BYT UT DENNA DATA mot riktig matsedel från Svensgårdsskolan
-        const allWeeks = {
-            19: [
-                { dag: "Måndag", datum: "5 maj", mat: ["Köttbullar med potatismos, gräddsås, lingon", "Vegetariskt: Vegobullar med potatismos"] },
-                { dag: "Tisdag", datum: "6 maj", mat: ["Fiskgratäng med potatis", "Vegetariskt: Grönsaksgratäng"] },
-                { dag: "Onsdag", datum: "7 maj", mat: ["Kycklinggryta med ris", "Vegetariskt: Linsgryta med ris"] },
-                { dag: "Torsdag", datum: "8 maj", mat: ["Pannkakor med sylt och grädde", "Ärtsoppa"] },
-                { dag: "Fredag", datum: "9 maj", mat: ["Tacos med tillbehör", "Vegetariskt: Böntacos"] }
-            ],
-            20: [
-                { dag: "Måndag", datum: "12 maj", mat: ["Spaghetti och köttfärssås", "Vegetariskt: Spaghetti med linssås"] },
-                { dag: "Tisdag", datum: "13 maj", mat: ["Panerad fisk med kokt potatis och remouladsås", "Vegetariskt: Panerad halloumi"] },
-                { dag: "Onsdag", datum: "14 maj", mat: ["Korv stroganoff med ris", "Vegetariskt: Sojakorv stroganoff"] },
-                { dag: "Torsdag", datum: "15 maj", mat: ["Köttsoppa med klimp", "Pannkakor med sylt"] },
-                { dag: "Fredag", datum: "16 maj", mat: ["Pizza", "Vegetariskt: Pizza Margherita"] }
-            ],
-            21: [
-                { dag: "Måndag", datum: "19 maj", mat: ["Lasagne", "Vegetariskt: Grönsakslasagne"] },
-                { dag: "Tisdag", datum: "20 maj", mat: ["Fiskpinnar med potatismos", "Vegetariskt: Morotsbiffar"] },
-                { dag: "Onsdag", datum: "21 maj", mat: ["Kebabgryta med ris", "Vegetariskt: Falafelgryta"] },
-                { dag: "Torsdag", datum: "22 maj", mat: [] }, // Kristi himmelsfärd
-                { dag: "Fredag", datum: "23 maj", mat: ["Köttfärslimpa med brunsås och kokt potatis", "Vegetariskt: Quornfärslimpa"] }
-            ]
-        };
+  </div>
 
-        let currentWeek = getCurrentWeek();
-
-        function getCurrentWeek() {
-            const now = new Date();
-            const start = new Date(now.getFullYear(), 0, 1);
-            const diff = now - start + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
-            const oneWeek = 7 * 24 * 60 * 1000;
-            return Math.floor(diff / oneWeek) + 1;
-        }
-
-        function renderWeekTabs() {
-            const tabs = document.getElementById('weekTabs');
-            const weeks = Object.keys(allWeeks).map(Number).sort((a,b) => a-b);
-            tabs.innerHTML = weeks.map(w => `
-                <button class="week-tab ${w === currentWeek ? 'active' : ''}" onclick="setWeek(${w})">
-                    v.${w}
-                </button>
-            `).join('');
-        }
-
-        function renderMenu() {
-            const container = document.getElementById('menuContainer');
-            const weekData = allWeeks[currentWeek] || [];
-            const today = new Date();
-            const todayWeek = getCurrentWeek();
-            const todayDay = today.getDay(); // 0=söndag, 1=måndag
-
-            document.getElementById('weekTitle').textContent = `Vecka ${currentWeek}`;
-
-            if (weekData.length === 0) {
-                container.innerHTML = '<div class="day-card"><div class="empty-day">Ingen matsedel tillgänglig för denna vecka</div></div>';
-                return;
-            }
-
-            container.innerHTML = weekData.map((day, idx) => {
-                const dayNum = idx + 1; // Måndag=1
-                const isToday = currentWeek === todayWeek && dayNum === todayDay;
-                
-                return `
-                    <div class="day-card ${isToday ? 'today' : ''}">
-                        <div class="day-header ${isToday ? 'today' : ''}">
-                           
+</body>
+</html>
