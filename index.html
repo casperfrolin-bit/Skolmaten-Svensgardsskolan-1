@@ -1,1 +1,343 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Svensgårdsskolan | Skolmaten</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Roboto',sans-serif;
+    background:#f5f6f7;
+    color:#1f1f1f;
+}
+
+/* TOPBAR */
+
+.topbar{
+    height:64px;
+    background:#ffffff;
+    border-bottom:1px solid #e6e6e6;
+    display:flex;
+    align-items:center;
+    padding:0 32px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#89c541;
+    letter-spacing:-1px;
+}
+
+/* PAGE */
+
+.page{
+    max-width:980px;
+    margin:32px auto;
+    padding:0 16px;
+}
+
+/* CARD */
+
+.card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:
+        0 1px 2px rgba(0,0,0,0.04),
+        0 4px 14px rgba(0,0,0,0.05);
+}
+
+/* HEADER */
+
+.header{
+    padding:32px;
+    border-bottom:1px solid #ededed;
+}
+
+.school{
+    font-size:38px;
+    font-weight:700;
+    line-height:1.1;
+}
+
+.subtitle{
+    margin-top:8px;
+    font-size:15px;
+    color:#777;
+}
+
+/* WEEK NAV */
+
+.weeknav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 32px;
+    border-bottom:1px solid #ededed;
+    background:#fafafa;
+}
+
+.navbtn{
+    background:none;
+    border:none;
+    color:#70ad47;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+}
+
+.navbtn:hover{
+    text-decoration:underline;
+}
+
+.weektitle{
+    font-size:28px;
+    font-weight:700;
+}
+
+/* MENU */
+
+.menu{
+    padding:8px 32px 24px;
+}
+
+.day{
+    padding:24px 0;
+    border-bottom:1px solid #ededed;
+}
+
+.day:last-child{
+    border-bottom:none;
+}
+
+.dayname{
+    font-size:19px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.food{
+    color:#505050;
+    line-height:1.6;
+    font-size:16px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .topbar{
+        padding:0 18px;
+    }
+
+    .header{
+        padding:24px;
+    }
+
+    .school{
+        font-size:30px;
+    }
+
+    .weeknav{
+        padding:16px 18px;
+    }
+
+    .weektitle{
+        font-size:22px;
+    }
+
+    .menu{
+        padding:0 18px 18px;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="logo">skolmaten</div>
+</div>
+
+<div class="page">
+
+    <div class="card">
+
+        <div class="header">
+            <div class="school">Svensgårdsskolan</div>
+            <div class="subtitle">Matsedel</div>
+        </div>
+
+        <div class="weeknav">
+
+            <button class="navbtn" onclick="prevWeek()">
+                ← Föregående vecka
+            </button>
+
+            <div class="weektitle" id="weekTitle"></div>
+
+            <button class="navbtn" onclick="nextWeek()">
+                Nästa vecka →
+            </button>
+
+        </div>
+
+        <div class="menu" id="menu"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+const weeks = [];
+
+for(let i = 1; i <= 52; i++){
+
+    weeks.push({
+
+        week:i,
+
+        days:[
+
+            {
+                day:"Måndag",
+                food:"Redigera maten i JavaScript-koden"
+            },
+
+            {
+                day:"Tisdag",
+                food:"Redigera maten i JavaScript-koden"
+            },
+
+            {
+                day:"Onsdag",
+                food:"Redigera maten i JavaScript-koden"
+            },
+
+            {
+                day:"Torsdag",
+                food:"Redigera maten i JavaScript-koden"
+            },
+
+            {
+                day:"Fredag",
+                food:"Redigera maten i JavaScript-koden"
+            }
+
+        ]
+
+    });
+
+}
+
+/* EXEMPEL */
+
+weeks[19].days = [
+
+    {
+        day:"Måndag",
+        food:"Köttbullar med potatismos"
+    },
+
+    {
+        day:"Tisdag",
+        food:"Pasta Carbonara"
+    },
+
+    {
+        day:"Onsdag",
+        food:"Kycklinggryta med ris"
+    },
+
+    {
+        day:"Torsdag",
+        food:"Pannkakor med sylt"
+    },
+
+    {
+        day:"Fredag",
+        food:"Tacobuffé"
+    }
+
+];
+
+let currentWeek = 19;
+
+function renderWeek(){
+
+    const week = weeks[currentWeek];
+
+    document.getElementById("weekTitle").innerText =
+        "Vecka " + week.week;
+
+    const menu = document.getElementById("menu");
+
+    menu.innerHTML = "";
+
+    week.days.forEach(item => {
+
+        menu.innerHTML += `
+
+            <div class="day">
+
+                <div class="dayname">
+                    ${item.day}
+                </div>
+
+                <div class="food">
+                    ${item.food}
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+function nextWeek(){
+
+    if(currentWeek < 51){
+
+        currentWeek++;
+
+        renderWeek();
+
+    }
+
+}
+
+function prevWeek(){
+
+    if(currentWeek > 0){
+
+        currentWeek--;
+
+        renderWeek();
+
+    }
+
+}
+
+renderWeek();
+
+</script>
+
+</body>
+</html>
