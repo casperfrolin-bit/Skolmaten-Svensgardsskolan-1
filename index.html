@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Svensgårdsskolan Matsedel</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        background:#f5f5f5;
+        color:#222;
+    }
+
+    header{
+        background:#ffffff;
+        padding:20px;
+        border-bottom:1px solid #ddd;
+        text-align:center;
+    }
+
+    header h1{
+        font-size:28px;
+        margin-bottom:5px;
+    }
+
+    header p{
+        color:#666;
+    }
+
+    .container{
+        max-width:900px;
+        margin:30px auto;
+        background:white;
+        border-radius:12px;
+        overflow:hidden;
+        box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .week-header{
+        background:#2f8f46;
+        color:white;
+        padding:20px;
+        text-align:center;
+        font-size:24px;
+        font-weight:bold;
+    }
+
+    .menu{
+        padding:20px;
+    }
+
+    .day{
+        border-bottom:1px solid #eee;
+        padding:18px 0;
+    }
+
+    .day:last-child{
+        border-bottom:none;
+    }
+
+    .day h2{
+        margin-bottom:8px;
+        color:#2f8f46;
+    }
+
+    .food{
+        font-size:18px;
+    }
+
+    .buttons{
+        display:flex;
+        justify-content:space-between;
+        padding:20px;
+        background:#fafafa;
+        border-top:1px solid #ddd;
+    }
+
+    button{
+        padding:12px 24px;
+        border:none;
+        border-radius:8px;
+        background:#2f8f46;
+        color:white;
+        cursor:pointer;
+        font-size:16px;
+        transition:0.2s;
+    }
+
+    button:hover{
+        background:#256f36;
+    }
+
+    @media(max-width:600px){
+        .week-header{
+            font-size:20px;
+        }
+
+        .food{
+            font-size:16px;
+        }
+
+        button{
+            width:48%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Svensgårdsskolan</h1>
+    <p>Matsedel</p>
+</header>
+
+<div class="container">
+
+    <div class="week-header" id="weekTitle"></div>
+
+    <div class="menu" id="menuContainer"></div>
+
+    <div class="buttons">
+        <button onclick="previousWeek()">Föregående sida</button>
+        <button onclick="nextWeek()">Nästa sida</button>
+    </div>
+
+</div>
+
+<script>
+
+const weeks = [
+
+{
+    week: "Vecka 20",
+    days: [
+        { day: "Måndag", food: "Köttbullar med potatismos" },
+        { day: "Tisdag", food: "Pasta Carbonara" },
+        { day: "Onsdag", food: "Kycklinggryta med ris" },
+        { day: "Torsdag", food: "Pannkakor med sylt" },
+        { day: "Fredag", food: "Tacos" }
+    ]
+},
+
+{
+    week: "Vecka 21",
+    days: [
+        { day: "Måndag", food: "Lasagne" },
+        { day: "Tisdag", food: "Fisk med potatis" },
+        { day: "Onsdag", food: "Hamburgare" },
+        { day: "Torsdag", food: "Kebabgryta" },
+        { day: "Fredag", food: "Pizza" }
+    ]
+},
+
+{
+    week: "Vecka 22",
+    days: [
+        { day: "Måndag", food: "Korv Stroganoff" },
+        { day: "Tisdag", food: "Chicken nuggets" },
+        { day: "Onsdag", food: "Spaghetti och köttfärssås" },
+        { day: "Torsdag", food: "Soppa och bröd" },
+        { day: "Fredag", food: "Tortellini" }
+    ]
+},
+
+{
+    week: "Vecka 23",
+    days: [
+        { day: "Måndag", food: "Panerad fisk" },
+        { day: "Tisdag", food: "Kycklingburgare" },
+        { day: "Onsdag", food: "Köttgryta" },
+        { day: "Torsdag", food: "Pannbiff" },
+        { day: "Fredag", food: "Tacobuffé" }
+    ]
+},
+
+{
+    week: "Vecka 24",
+    days: [
+        { day: "Måndag", food: "Makaronilåda" },
+        { day: "Tisdag", food: "Fiskpinnar" },
+        { day: "Onsdag", food: "Kebab med ris" },
+        { day: "Torsdag", food: "Pastasallad" },
+        { day: "Fredag", food: "Hamburgertallrik" }
+    ]
+}
+
+];
+
+let currentWeek = 0;
+
+function renderWeek() {
+
+    const week = weeks[currentWeek];
+
+    document.getElementById("weekTitle").innerText = week.week;
+
+    const menuContainer = document.getElementById("menuContainer");
+
+    menuContainer.innerHTML = "";
+
+    week.days.forEach(item => {
+
+        menuContainer.innerHTML += `
+            <div class="day">
+                <h2>${item.day}</h2>
+                <div class="food">${item.food}</div>
+            </div>
+        `;
+
+    });
+
+}
+
+function nextWeek() {
+
+    if(currentWeek < weeks.length - 1){
+        currentWeek++;
+        renderWeek();
+    }
+
+}
+
+function previousWeek() {
+
+    if(currentWeek > 0){
+        currentWeek--;
+        renderWeek();
+    }
+
+}
+
+renderWeek();
+
+</script>
+
+</body>
+</html>
