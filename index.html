@@ -6,7 +6,7 @@
 
 <title>Skolmaten</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet">
 
 <style>
 
@@ -28,7 +28,7 @@ body{
 
 .topbar{
     width:100%;
-    height:115px;
+    height:80px;
     background:linear-gradient(to right,#07344b,#021327);
     display:flex;
     align-items:center;
@@ -49,13 +49,14 @@ body{
     align-items:center;
     color:white;
     font-weight:700;
-    font-size:18px;
+    font-size:17px;
     min-width:170px;
 }
 
 .logo img{
-    height:52px;
-    margin-right:10px;
+    height:60px;
+    margin-right:8px;
+    display:block;
 }
 
 /* SEARCH */
@@ -83,6 +84,11 @@ body{
     transform:translateY(-50%);
     color:#777;
     font-size:22px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24;
 }
 
 /* RIGHT */
@@ -139,13 +145,13 @@ body{
     display:flex;
     justify-content:center;
     padding-top:40px;
-    padding-bottom:10px;
+    padding-bottom:5px;
 }
 
 /* CONTENT */
 
 .content{
-    width:680px;
+    width:760px;
 }
 
 /* CITY */
@@ -162,6 +168,11 @@ body{
 
 .city-link .material-symbols-outlined{
     font-size:20px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24;
 }
 
 /* HEADER */
@@ -169,16 +180,19 @@ body{
 .school-header{
     display:flex;
     justify-content:space-between;
-    align-items:flex-start;
-    border-bottom:3px solid #efb300;
-    padding-bottom:10px;
+    align-items:flex-end;
+    border-bottom:4px solid #efb300;
+    padding-bottom:6px;
     margin-bottom:14px;
 }
 
 .school-title{
     font-size:19px;
     font-weight:700;
+    line-height:1;
 }
+
+/* RIGHT HEADER */
 
 .header-right{
     display:flex;
@@ -197,11 +211,19 @@ body{
 .header-icons .material-symbols-outlined{
     font-size:20px;
     cursor:pointer;
+
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 150,
+    'GRAD' 0,
+    'opsz' 24;
 }
 
+/* BADGE */
+
 .school-badge{
-    width:36px;
-    height:36px;
+    width:38px;
+    height:38px;
     border-radius:50%;
     overflow:hidden;
 }
@@ -210,6 +232,7 @@ body{
     width:100%;
     height:100%;
     object-fit:cover;
+    display:block;
 }
 
 /* WEEK */
@@ -261,6 +284,12 @@ body{
 .footer-text .material-symbols-outlined{
     font-size:14px;
     vertical-align:middle;
+
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24;
 }
 
 /* WEEK NAV */
@@ -269,7 +298,7 @@ body{
     display:flex;
     justify-content:space-between;
     margin-top:22px;
-    padding-bottom:40px;
+    padding-bottom:20px;
 }
 
 .week-link{
@@ -283,6 +312,12 @@ body{
 
 .week-link .material-symbols-outlined{
     font-size:20px;
+
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24;
 }
 
 /* MOBILE */
@@ -309,7 +344,7 @@ body{
 
         <div class="logo">
 
-            <img src="logo.svg" alt="Skolmaten Logo">
+            <img src="./logo.svg" alt="Skolmaten Logo">
 
             Skolmaten
 
@@ -384,7 +419,7 @@ body{
                 </div>
 
                 <div class="school-badge">
-                    <img src="helsingborg.png" alt="Helsingborg">
+                    <img src="./helsingborg.png" alt="Helsingborg">
                 </div>
 
             </div>
@@ -474,7 +509,7 @@ body{
                 link
             </span>
 
-            Vi strävar efter att erbjuda god och näringsrik mat varje dag. Till varje måltid serveras ett urval av grönsaker, anpassat efter säsong och vad som passar till dagens rätt. Vi lagar så mycket som möjligt från grunden och har som mål att använda så mycket ekologiska råvaror som vi kan. Vi reserverar oss för eventuella förändringar i matsedeln.
+            Vi strävar efter att erbjuda god och näringsrik mat varje dag.
 
         </div>
 
