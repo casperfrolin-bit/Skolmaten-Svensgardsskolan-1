@@ -1,9 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Skolmaten</title>
+
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <style>
     * {
@@ -18,7 +22,7 @@
       color: #222;
     }
 
-    /* TOP BAR */
+    /* TOPBAR */
     .topbar {
       background: #00213d;
       height: 60px;
@@ -31,42 +35,57 @@
     .logo {
       font-weight: bold;
       margin-right: 20px;
+      font-size: 18px;
     }
 
     .search {
       flex: 1;
+      position: relative;
     }
 
     .search input {
       width: 100%;
-      padding: 10px;
+      padding: 10px 10px 10px 40px;
       border-radius: 4px;
       border: none;
+      outline: none;
+    }
+
+    .search .material-icons {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #777;
+      font-size: 20px;
     }
 
     .top-links {
       margin-left: 20px;
       display: flex;
-      gap: 15px;
+      gap: 20px;
       font-size: 14px;
     }
 
-    /* CONTENT */
+    /* MAIN */
     .container {
       width: 500px;
       margin: 50px auto;
     }
 
     .school-name {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: bold;
-      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 4px solid #f2b400;
+      margin-bottom: 15px;
     }
 
     .week {
       font-size: 24px;
       margin-bottom: 30px;
       color: #333;
+      font-weight: bold;
     }
 
     .day {
@@ -77,6 +96,7 @@
 
     .day h3 {
       margin-bottom: 5px;
+      font-size: 20px;
     }
 
     .date {
@@ -88,6 +108,7 @@
     .meal {
       margin-bottom: 8px;
       line-height: 1.5;
+      font-size: 15px;
     }
 
     .footer-text {
@@ -97,21 +118,36 @@
       margin-top: 30px;
     }
 
+    /* WEEK NAVIGATION */
     .week-nav {
       display: flex;
       justify-content: space-between;
       margin-top: 30px;
       color: #1d6f8f;
+      font-size: 15px;
+    }
+
+    .week-link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
       cursor: pointer;
+    }
+
+    .week-link .material-icons {
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
 
+  <!-- TOPBAR -->
   <div class="topbar">
+
     <div class="logo">Skolmaten</div>
 
     <div class="search">
+      <span class="material-icons">search</span>
       <input type="text" placeholder="Sök">
     </div>
 
@@ -119,13 +155,17 @@
       <span>Svenska</span>
       <span>Logga in</span>
     </div>
+
   </div>
 
+  <!-- CONTENT -->
   <div class="container">
 
     <div class="school-name">Svensgårdsskolan</div>
+
     <div class="week">Vecka 19</div>
 
+    <!-- MONDAY -->
     <div class="day">
       <h3>Måndag</h3>
       <div class="date">2026-05-04</div>
@@ -139,6 +179,7 @@
       </div>
     </div>
 
+    <!-- TUESDAY -->
     <div class="day">
       <h3>Tisdag</h3>
       <div class="date">2026-05-05</div>
@@ -152,6 +193,7 @@
       </div>
     </div>
 
+    <!-- WEDNESDAY -->
     <div class="day">
       <h3>Onsdag</h3>
       <div class="date">2026-05-06</div>
@@ -165,9 +207,54 @@
       </div>
     </div>
 
+    <!-- THURSDAY -->
+    <div class="day">
+      <h3>Torsdag</h3>
+      <div class="date">2026-05-07</div>
+
+      <div class="meal">
+        Kyckling wok på svensk köttråvara, serveras med nudlar och grönsaksbuffé
+      </div>
+
+      <div class="meal">
+        Bakad potatis med kesoröra samt grönsaksbuffé
+      </div>
+    </div>
+
+    <!-- FRIDAY -->
+    <div class="day">
+      <h3>Fredag</h3>
+      <div class="date">2026-05-08</div>
+
+      <div class="meal">
+        Köttfärslimpa på svensk köttråvara serveras med sås, kokt potatis samt grönsaksbuffé
+      </div>
+
+      <div class="meal">
+        Färslimpa på ärter serveras med rostad potatis, sås samt grönsaksbuffé
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-text">
+      Vi strävar efter att erbjuda god och näringsrik mat varje dag.
+      Till varje måltid serveras ett urval av grönsaker, anpassat efter
+      säsong och vad som passar till dagens rätt.
+    </div>
+
+    <!-- WEEK NAV -->
     <div class="week-nav">
-      <span>← Föregående vecka</span>
-      <span>Nästa vecka →</span>
+
+      <div class="week-link">
+        <span class="material-icons">chevron_left</span>
+        Föregående vecka
+      </div>
+
+      <div class="week-link">
+        Nästa vecka
+        <span class="material-icons">chevron_right</span>
+      </div>
+
     </div>
 
   </div>
