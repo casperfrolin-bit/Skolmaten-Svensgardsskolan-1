@@ -43,7 +43,7 @@ body{
 
     display:flex;
     align-items:center;
-    justify-content:space-between; /* FIX */
+    justify-content:space-between;
     padding:0 18px;
     box-shadow:0 1px 2px rgba(0,0,0,0.1);
 
@@ -73,12 +73,12 @@ body{
     width:auto;
     object-fit:contain;
     margin-right:8px;
-    display:block;
 }
 
 .search{
-    flex:1;
+    flex:2.5;
     position:relative;
+    max-width:700px;
 }
 
 .search input{
@@ -126,7 +126,6 @@ body{
     background:#006AA7;
     position:relative;
     border-radius:1px;
-    overflow:hidden;
 }
 
 .flag::before{
@@ -150,7 +149,7 @@ body{
 }
 
 .login{
-    color:#FFFFFF;
+    color:white;
     font-size:14px;
     font-weight:600;
     cursor:pointer;
@@ -171,10 +170,9 @@ body{
 .content{
     width:100%;
     max-width:620px;
-    min-height:calc(100vh - 130px);
 }
 
-/* TOP INFO ROW */
+/* TOP INFO */
 
 .top-info{
     display:flex;
@@ -187,26 +185,19 @@ body{
     display:flex;
     align-items:center;
     gap:4px;
-    color:#000000;
     font-size:15px;
     font-weight:500;
 }
 
 .header-icons{
     display:flex;
-    align-items:center;
     gap:16px;
     color:#3f7186;
 }
 
-.header-icons .material-symbols-outlined{
-    font-size:23px;
-}
-
-/* HEADER */
+/* SCHOOL */
 
 .school-header{
-    width:100%;
     display:flex;
     justify-content:space-between;
     align-items:flex-end;
@@ -245,6 +236,8 @@ body{
     margin-bottom:10px;
 }
 
+/* DAYS */
+
 .day{
     border-bottom:1px solid #e7e7e7;
     padding:12px 0;
@@ -252,66 +245,50 @@ body{
 
 .day h3{
     font-size:16px;
-    margin-bottom:3px;
     font-weight:600;
 }
 
 .date{
     color:#8f8f8f;
     font-size:12px;
-    margin-bottom:5px;
 }
 
 .meal{
     font-size:15px;
-    line-height:1.5;
-    margin-bottom:4px;
+    margin-top:4px;
 }
+
+/* FOOTER TEXT */
 
 .footer-text{
     margin-top:20px;
     margin-bottom:18px;
     color:#4c7b90;
     font-size:15px;
-    line-height:1.45;
 }
+
+/* NAV */
 
 .week-nav{
     display:flex;
     justify-content:space-between;
-    padding-bottom:20px;
 }
 
 .week-link{
     display:flex;
     align-items:center;
     gap:6px;
-    color:#000000;
     cursor:pointer;
     font-size:15px;
-    font-weight:500;
-}
-
-.week-link .material-symbols-outlined{
-    font-size:28px;
-    color:#2d6e93;
 }
 
 /* FOOTER */
 
 .bottom-footer{
     width:100%;
-    background:
-    linear-gradient(
-        90deg,
-        #0f4d63 0%,
-        #05243c 50%,
-        #021327 100%
-    );
-
+    background:linear-gradient(90deg,#0f4d63,#05243c,#021327);
     padding:40px 80px;
     margin-top:40px;
-
     display:flex;
     justify-content:space-between;
     flex-wrap:wrap;
@@ -321,14 +298,13 @@ body{
 .footer-column h3{
     color:#f2b705;
     font-size:20px;
-    margin-bottom:14px;
 }
 
 .footer-column a{
     display:block;
     color:white;
     text-decoration:none;
-    margin-bottom:10px;
+    margin-top:10px;
     font-size:15px;
 }
 
@@ -371,7 +347,6 @@ body{
     <div class="content">
 
         <div class="top-info">
-
             <div class="city-link">
                 <span class="material-symbols-outlined">chevron_left</span>
                 Helsingborgs stad
@@ -381,17 +356,13 @@ body{
                 <span class="material-symbols-outlined">print</span>
                 <span class="material-symbols-outlined">rss_feed</span>
             </div>
-
         </div>
 
         <div class="school-header">
-
             <div class="school-title">Svensgårdsskolan</div>
-
             <div class="school-badge">
                 <img src="nedladdning (4).png">
             </div>
-
         </div>
 
         <div class="week" id="weekText">Vecka 20</div>
@@ -399,20 +370,13 @@ body{
         <div id="menuContent"></div>
 
         <div class="footer-text">
-            Vi strävar efter att erbjuda god och näringsrik mat varje dag.
+            Vi strävar efter att erbjuda god och näringsrik mat varje dag. Till varje måltid serveras ett urval av grönsaker, anpassat efter säsong och vad som passar till dagens rätt. Vi lagar så mycket som möjligt från grunden och har som mål att använda så mycket ekologiska råvaror som vi kan. Vi reserverar oss för eventuella förändringar i matsedeln.
         </div>
 
         <div class="week-nav">
 
-            <div class="week-link" id="prevBtn">
-                <span class="material-symbols-outlined">chevron_left</span>
-                Föregående vecka
-            </div>
-
-            <div class="week-link" id="nextBtn">
-                Nästa vecka
-                <span class="material-symbols-outlined">chevron_right</span>
-            </div>
+            <div class="week-link" id="prevBtn">⬅ Föregående vecka</div>
+            <div class="week-link" id="nextBtn">Nästa vecka ➡</div>
 
         </div>
 
@@ -443,46 +407,29 @@ body{
 
 </div>
 
+<script src="menu.js"></script>
+
 <script>
+
 let currentWeek = 20;
-
-function getWeekDates(weekNumber){
-
-    const firstDay = new Date(2026, 0, 1);
-    const days = (weekNumber - 1) * 7;
-    firstDay.setDate(firstDay.getDate() + days);
-
-    const monday = new Date(firstDay);
-    monday.setDate(monday.getDate() - monday.getDay() + 1);
-
-    const dates = [];
-
-    for(let i = 0; i < 5; i++){
-        const d = new Date(monday);
-        d.setDate(monday.getDate() + i);
-
-        dates.push(
-            d.getFullYear() + "-" +
-            String(d.getMonth()+1).padStart(2,"0") + "-" +
-            String(d.getDate()).padStart(2,"0")
-        );
-    }
-
-    return dates;
-}
 
 function renderWeek(){
 
     document.getElementById("weekText").innerText = "Vecka " + currentWeek;
 
-    const dates = getWeekDates(currentWeek);
+    if(!menu || !menu[currentWeek]){
+        document.getElementById("menuContent").innerHTML = "<p>Ingen mat denna vecka</p>";
+        return;
+    }
+
+    const w = menu[currentWeek];
 
     document.getElementById("menuContent").innerHTML = `
-        <div class="day"><h3>Måndag</h3><div class="date">${dates[0]}</div><div class="meal">Ingen mat inlagd ännu</div></div>
-        <div class="day"><h3>Tisdag</h3><div class="date">${dates[1]}</div><div class="meal">Ingen mat inlagd ännu</div></div>
-        <div class="day"><h3>Onsdag</h3><div class="date">${dates[2]}</div><div class="meal">Ingen mat inlagd ännu</div></div>
-        <div class="day"><h3>Torsdag</h3><div class="date">${dates[3]}</div><div class="meal">Ingen mat inlagd ännu</div></div>
-        <div class="day"><h3>Fredag</h3><div class="date">${dates[4]}</div><div class="meal">Ingen mat inlagd ännu</div></div>
+        <div class="day"><h3>Måndag</h3><div class="date">${w.monday.date}</div><div class="meal">${w.monday.meal}</div></div>
+        <div class="day"><h3>Tisdag</h3><div class="date">${w.tuesday.date}</div><div class="meal">${w.tuesday.meal}</div></div>
+        <div class="day"><h3>Onsdag</h3><div class="date">${w.wednesday.date}</div><div class="meal">${w.wednesday.meal}</div></div>
+        <div class="day"><h3>Torsdag</h3><div class="date">${w.thursday.date}</div><div class="meal">${w.thursday.meal}</div></div>
+        <div class="day"><h3>Fredag</h3><div class="date">${w.friday.date}</div><div class="meal">${w.friday.meal}</div></div>
     `;
 }
 
@@ -501,6 +448,7 @@ document.getElementById("nextBtn").onclick = () => {
 };
 
 renderWeek();
+
 </script>
 
 </body>
