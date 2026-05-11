@@ -24,21 +24,40 @@ body{
     zoom:1.12;
 }
 
-/* TOPBAR */
+/* =========================
+   TOPBAR
+========================= */
+
 .topbar{
     width:100%;
     height:110px;
-    background:linear-gradient(90deg,#0f4d63,#0a3b55,#05243c,#021327);
+
+    background:
+    linear-gradient(
+        90deg,
+        #0f4d63 0%,
+        #0a3b55 20%,
+        #05243c 55%,
+        #021327 100%
+    );
+
     display:flex;
     align-items:center;
+    justify-content:space-between; /* FIX */
     padding:0 18px;
+    box-shadow:0 1px 2px rgba(0,0,0,0.1);
+
     position:fixed;
     top:0;
     left:0;
     z-index:999;
 }
 
-.left-side{display:flex;align-items:center;width:100%;}
+.left-side{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
 
 .logo{
     display:flex;
@@ -49,9 +68,18 @@ body{
     min-width:170px;
 }
 
-.logo img{height:52px;margin-right:8px;}
+.logo img{
+    height:52px;
+    width:auto;
+    object-fit:contain;
+    margin-right:8px;
+    display:block;
+}
 
-.search{flex:1;position:relative;}
+.search{
+    flex:1;
+    position:relative;
+}
 
 .search input{
     width:100%;
@@ -59,6 +87,8 @@ body{
     border:none;
     border-radius:6px;
     padding-left:42px;
+    font-size:14px;
+    outline:none;
     background:#f2f2f2;
 }
 
@@ -67,6 +97,8 @@ body{
     left:12px;
     top:50%;
     transform:translateY(-50%);
+    color:#777;
+    font-size:22px;
 }
 
 .right-side{
@@ -84,6 +116,8 @@ body{
     display:flex;
     align-items:center;
     gap:10px;
+    cursor:pointer;
+    font-size:14px;
 }
 
 .flag{
@@ -91,20 +125,41 @@ body{
     height:15px;
     background:#006AA7;
     position:relative;
+    border-radius:1px;
+    overflow:hidden;
 }
 
-.flag::before,.flag::after{
+.flag::before{
     content:"";
     position:absolute;
+    left:30%;
+    top:0;
+    width:3px;
+    height:100%;
     background:#FECC00;
 }
 
-.flag::before{left:30%;width:3px;height:100%;}
-.flag::after{top:40%;width:100%;height:3px;}
+.flag::after{
+    content:"";
+    position:absolute;
+    left:0;
+    top:40%;
+    width:100%;
+    height:3px;
+    background:#FECC00;
+}
 
-.login{color:white;font-weight:600;}
+.login{
+    color:#FFFFFF;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+}
 
-/* PAGE */
+/* =========================
+   PAGE
+========================= */
+
 .page{
     width:100%;
     display:flex;
@@ -116,12 +171,15 @@ body{
 .content{
     width:100%;
     max-width:620px;
+    min-height:calc(100vh - 130px);
 }
 
-/* HEADER INFO */
+/* TOP INFO ROW */
+
 .top-info{
     display:flex;
     justify-content:space-between;
+    align-items:center;
     margin-bottom:12px;
 }
 
@@ -129,12 +187,29 @@ body{
     display:flex;
     align-items:center;
     gap:4px;
+    color:#000000;
+    font-size:15px;
+    font-weight:500;
 }
 
-/* SCHOOL */
+.header-icons{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    color:#3f7186;
+}
+
+.header-icons .material-symbols-outlined{
+    font-size:23px;
+}
+
+/* HEADER */
+
 .school-header{
+    width:100%;
     display:flex;
     justify-content:space-between;
+    align-items:flex-end;
     border-bottom:3px solid #efb300;
     padding-bottom:7px;
     margin-bottom:12px;
@@ -145,44 +220,62 @@ body{
     font-weight:700;
 }
 
-.school-badge img{
+.school-badge{
     width:38px;
     height:38px;
+    border-radius:50%;
+    overflow:hidden;
+    background:#16386a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.school-badge img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
 
 /* WEEK */
+
 .week{
     font-size:20px;
     font-weight:600;
     margin-bottom:10px;
 }
 
-/* DAYS */
 .day{
     border-bottom:1px solid #e7e7e7;
     padding:12px 0;
 }
 
-.day h3{font-size:16px;font-weight:600;}
+.day h3{
+    font-size:16px;
+    margin-bottom:3px;
+    font-weight:600;
+}
 
 .date{
-    font-size:12px;
     color:#8f8f8f;
+    font-size:12px;
+    margin-bottom:5px;
 }
 
 .meal{
     font-size:15px;
-    margin-top:4px;
+    line-height:1.5;
+    margin-bottom:4px;
 }
 
-/* FOOTER TEXT */
 .footer-text{
     margin-top:20px;
     margin-bottom:18px;
     color:#4c7b90;
+    font-size:15px;
+    line-height:1.45;
 }
 
-/* WEEK NAV */
 .week-nav{
     display:flex;
     justify-content:space-between;
@@ -193,28 +286,50 @@ body{
     display:flex;
     align-items:center;
     gap:6px;
+    color:#000000;
     cursor:pointer;
+    font-size:15px;
+    font-weight:500;
+}
+
+.week-link .material-symbols-outlined{
+    font-size:28px;
+    color:#2d6e93;
 }
 
 /* FOOTER */
+
 .bottom-footer{
     width:100%;
-    background:linear-gradient(90deg,#0f4d63,#05243c,#021327);
+    background:
+    linear-gradient(
+        90deg,
+        #0f4d63 0%,
+        #05243c 50%,
+        #021327 100%
+    );
+
     padding:40px 80px;
+    margin-top:40px;
+
     display:flex;
     justify-content:space-between;
-    margin-top:40px;
+    flex-wrap:wrap;
+    gap:40px;
 }
 
 .footer-column h3{
     color:#f2b705;
+    font-size:20px;
+    margin-bottom:14px;
 }
 
 .footer-column a{
     display:block;
     color:white;
-    margin-top:10px;
     text-decoration:none;
+    margin-bottom:10px;
+    font-size:15px;
 }
 
 </style>
@@ -236,14 +351,16 @@ body{
             <input type="text" placeholder="Sök">
         </div>
 
-        <div class="right-side">
-            <button class="language-btn">
-                <div class="flag"></div>
-                Svenska
-            </button>
+    </div>
 
-            <div class="login">Logga in</div>
-        </div>
+    <div class="right-side">
+
+        <button class="language-btn">
+            <div class="flag"></div>
+            Svenska
+        </button>
+
+        <div class="login">Logga in</div>
 
     </div>
 
@@ -251,50 +368,55 @@ body{
 
 <div class="page">
 
-<div class="content">
+    <div class="content">
 
-    <div class="top-info">
-        <div class="city-link">
-            <span class="material-symbols-outlined">chevron_left</span>
-            Helsingborgs stad
+        <div class="top-info">
+
+            <div class="city-link">
+                <span class="material-symbols-outlined">chevron_left</span>
+                Helsingborgs stad
+            </div>
+
+            <div class="header-icons">
+                <span class="material-symbols-outlined">print</span>
+                <span class="material-symbols-outlined">rss_feed</span>
+            </div>
+
         </div>
 
-        <div class="header-icons">
-            <span class="material-symbols-outlined">print</span>
-            <span class="material-symbols-outlined">rss_feed</span>
+        <div class="school-header">
+
+            <div class="school-title">Svensgårdsskolan</div>
+
+            <div class="school-badge">
+                <img src="nedladdning (4).png">
+            </div>
+
         </div>
+
+        <div class="week" id="weekText">Vecka 20</div>
+
+        <div id="menuContent"></div>
+
+        <div class="footer-text">
+            Vi strävar efter att erbjuda god och näringsrik mat varje dag.
+        </div>
+
+        <div class="week-nav">
+
+            <div class="week-link" id="prevBtn">
+                <span class="material-symbols-outlined">chevron_left</span>
+                Föregående vecka
+            </div>
+
+            <div class="week-link" id="nextBtn">
+                Nästa vecka
+                <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="school-header">
-        <div class="school-title">Svensgårdsskolan</div>
-        <div class="school-badge">
-            <img src="nedladdning (4).png">
-        </div>
-    </div>
-
-    <div class="week" id="weekText">Vecka 20</div>
-
-    <div id="menuContent"></div>
-
-    <div class="footer-text">
-        Vi strävar efter att erbjuda god och näringsrik mat varje dag.
-    </div>
-
-    <div class="week-nav">
-
-        <div class="week-link" id="prevBtn">
-            <span class="material-symbols-outlined">chevron_left</span>
-            Föregående vecka
-        </div>
-
-        <div class="week-link" id="nextBtn">
-            Nästa vecka
-            <span class="material-symbols-outlined">chevron_right</span>
-        </div>
-
-    </div>
-
-</div>
 
 </div>
 
@@ -322,24 +444,28 @@ body{
 </div>
 
 <script>
-
 let currentWeek = 20;
 
 function getWeekDates(weekNumber){
 
-    const firstDay = new Date(2026,0,1);
-    const days = (weekNumber-1)*7;
-    firstDay.setDate(firstDay.getDate()+days);
+    const firstDay = new Date(2026, 0, 1);
+    const days = (weekNumber - 1) * 7;
+    firstDay.setDate(firstDay.getDate() + days);
 
     const monday = new Date(firstDay);
-    monday.setDate(monday.getDate()-monday.getDay()+1);
+    monday.setDate(monday.getDate() - monday.getDay() + 1);
 
-    const dates=[];
+    const dates = [];
 
-    for(let i=0;i<5;i++){
-        const d=new Date(monday);
-        d.setDate(monday.getDate()+i);
-        dates.push(d.toISOString().split("T")[0]);
+    for(let i = 0; i < 5; i++){
+        const d = new Date(monday);
+        d.setDate(monday.getDate() + i);
+
+        dates.push(
+            d.getFullYear() + "-" +
+            String(d.getMonth()+1).padStart(2,"0") + "-" +
+            String(d.getDate()).padStart(2,"0")
+        );
     }
 
     return dates;
@@ -347,11 +473,11 @@ function getWeekDates(weekNumber){
 
 function renderWeek(){
 
-    document.getElementById("weekText").innerText="Vecka "+currentWeek;
+    document.getElementById("weekText").innerText = "Vecka " + currentWeek;
 
-    const dates=getWeekDates(currentWeek);
+    const dates = getWeekDates(currentWeek);
 
-    document.getElementById("menuContent").innerHTML=`
+    document.getElementById("menuContent").innerHTML = `
         <div class="day"><h3>Måndag</h3><div class="date">${dates[0]}</div><div class="meal">Ingen mat inlagd ännu</div></div>
         <div class="day"><h3>Tisdag</h3><div class="date">${dates[1]}</div><div class="meal">Ingen mat inlagd ännu</div></div>
         <div class="day"><h3>Onsdag</h3><div class="date">${dates[2]}</div><div class="meal">Ingen mat inlagd ännu</div></div>
@@ -360,16 +486,21 @@ function renderWeek(){
     `;
 }
 
-document.getElementById("prevBtn").onclick=()=>{
-    if(currentWeek>1){currentWeek--;renderWeek();}
+document.getElementById("prevBtn").onclick = () => {
+    if(currentWeek > 1){
+        currentWeek--;
+        renderWeek();
+    }
 };
 
-document.getElementById("nextBtn").onclick=()=>{
-    if(currentWeek<52){currentWeek++;renderWeek();}
+document.getElementById("nextBtn").onclick = () => {
+    if(currentWeek < 52){
+        currentWeek++;
+        renderWeek();
+    }
 };
 
 renderWeek();
-
 </script>
 
 </body>
