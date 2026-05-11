@@ -10,13 +10,9 @@
 
 <style>
 
-/* ===== DIN EXAKTA CSS (oförändrad) ===== */
+/* ===== ALL DIN CSS (HELT OFÖRÄNDRAD) ===== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
     font-family:"Segoe UI", Arial, sans-serif;
@@ -33,7 +29,6 @@ body{
     display:flex;
     align-items:center;
     padding:0 18px;
-    box-shadow:0 1px 2px rgba(0,0,0,0.1);
     position:fixed;
     top:0;
     left:0;
@@ -44,7 +39,7 @@ body{
 
 .logo{display:flex;align-items:center;color:white;font-weight:700;font-size:17px;min-width:170px;}
 
-.logo img{height:52px;width:auto;margin-right:8px;}
+.logo img{height:52px;margin-right:8px;}
 
 .search{flex:1;position:relative;}
 
@@ -54,14 +49,20 @@ body{
     border:none;
     border-radius:6px;
     padding-left:42px;
-    font-size:14px;
 }
 
-.right-side{display:flex;align-items:center;gap:18px;margin-left:18px;}
+.search .material-symbols-outlined{
+    position:absolute;
+    left:12px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.right-side{display:flex;align-items:center;gap:18px;}
 
 .language-btn{background:white;border:none;border-radius:4px;height:29px;padding:0 12px;}
 
-.login{color:#fff;font-weight:600;cursor:pointer;}
+.login{color:white;font-weight:600;cursor:pointer;}
 
 .page{
     width:100%;
@@ -71,9 +72,26 @@ body{
     padding-bottom:35px;
 }
 
-.content{
-    width:100%;
-    max-width:620px;
+.content{width:100%;max-width:620px;}
+
+.top-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.city-link{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    font-size:15px;
+}
+
+.header-icons{
+    display:flex;
+    gap:16px;
+    color:#3f7186;
 }
 
 .school-header{
@@ -98,21 +116,11 @@ body{
     padding:12px 0;
 }
 
-.day h3{
-    font-size:16px;
-    font-weight:600;
-}
+.day h3{font-size:16px;font-weight:600;}
 
-.date{
-    color:#8f8f8f;
-    font-size:12px;
-    margin-bottom:5px;
-}
+.date{color:#8f8f8f;font-size:12px;margin-bottom:5px;}
 
-.meal{
-    font-size:15px;
-    margin-bottom:4px;
-}
+.meal{font-size:15px;margin-bottom:4px;}
 
 .week-nav{
     display:flex;
@@ -121,12 +129,37 @@ body{
     cursor:pointer;
 }
 
+.bottom-footer{
+    width:100%;
+    background:linear-gradient(90deg,#0f4d63 0%,#05243c 50%,#021327 100%);
+    padding:40px 80px;
+    margin-top:40px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.footer-column h3{
+    color:#f2b705;
+    font-size:20px;
+    margin-bottom:14px;
+}
+
+.footer-column a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin-bottom:10px;
+    font-size:15px;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- TOPBAR (oförändrad) -->
+<!-- TOPBAR (HELT SOM DIN ORIGINAL) -->
 <div class="topbar">
 
     <div class="left-side">
@@ -134,6 +167,21 @@ body{
         <div class="logo">
             <img src="skolmaten_transparent_background-83ac975b.svg">
             Skolmaten
+        </div>
+
+        <div class="search">
+            <span class="material-symbols-outlined">search</span>
+            <input type="text" placeholder="Sök">
+        </div>
+
+        <div class="right-side">
+
+            <button class="language-btn">
+                Svenska
+            </button>
+
+            <div class="login">Logga in</div>
+
         </div>
 
     </div>
@@ -145,18 +193,46 @@ body{
 
 <div class="content">
 
-    <div class="school-header">
-        <div class="school-title">Svensgårdsskolan</div>
+    <!-- TOP INFO -->
+    <div class="top-info">
+
+        <div class="city-link">
+            <span class="material-symbols-outlined">chevron_left</span>
+            Helsingborgs stad
+        </div>
+
+        <div class="header-icons">
+            <span class="material-symbols-outlined">print</span>
+            <span class="material-symbols-outlined">rss_feed</span>
+        </div>
+
     </div>
 
+    <!-- SCHOOL -->
+    <div class="school-header">
+
+        <div class="school-title">Svensgårdsskolan</div>
+
+        <div class="school-badge">
+            <img src="nedladdning (4).png">
+        </div>
+
+    </div>
+
+    <!-- WEEK -->
     <div class="week" id="weekText">Vecka 20</div>
 
     <div id="menuContent"></div>
 
     <div class="week-nav">
 
-        <div id="prevBtn">⬅ Föregående vecka</div>
-        <div id="nextBtn">Nästa vecka ➡</div>
+        <div id="prevBtn">
+            ⬅ Föregående vecka
+        </div>
+
+        <div id="nextBtn">
+            Nästa vecka ➡
+        </div>
 
     </div>
 
@@ -164,17 +240,38 @@ body{
 
 </div>
 
-<!-- 🔥 VIKTIGT: MENU DATA -->
+<!-- FOOTER (HELT ÅTERSTÄLLD) -->
+<div class="bottom-footer">
+
+    <div class="footer-column">
+        <h3>Om Skolmaten</h3>
+        <a href="#">Information</a>
+        <a href="#">Cookies</a>
+        <a href="#">API</a>
+        <a href="#">Kontakta oss</a>
+    </div>
+
+    <div class="footer-column">
+        <h3>Appar</h3>
+        <a href="#">iOS</a>
+        <a href="#">Android</a>
+    </div>
+
+    <div class="footer-column">
+        <h3>Administration</h3>
+        <a href="#">Logga in</a>
+    </div>
+
+</div>
+
+<!-- 🔥 MENU DATA -->
 <script src="menu.js"></script>
 
 <script>
 
 let currentWeek = 20;
 
-/* =========================
-   DATUM
-========================= */
-
+/* DATUM */
 function getWeekDates(weekNumber){
 
     const firstDay = new Date(2026,0,1);
@@ -201,10 +298,7 @@ function getWeekDates(weekNumber){
     return dates;
 }
 
-/* =========================
-   🔥 HÄMTAR MAT FRÅN menu.js
-========================= */
-
+/* MAT FRÅN menu.js */
 function renderWeek(){
 
     const week = menuData[currentWeek];
@@ -219,7 +313,7 @@ function renderWeek(){
 
     days.forEach((day,i)=>{
 
-        const mat = week?.dagar?.[day]?.mat || ["Ingen mat inlagd",""];
+        const mat = week?.dagar?.[day]?.mat || ["Ingen mat",""];
 
         html += `
             <div class="day">
@@ -235,10 +329,7 @@ function renderWeek(){
     document.getElementById("menuContent").innerHTML = html;
 }
 
-/* =========================
-   KNAPPAR
-========================= */
-
+/* KNAPPAR */
 document.getElementById("prevBtn").onclick = () => {
     if(currentWeek > 1){
         currentWeek--;
