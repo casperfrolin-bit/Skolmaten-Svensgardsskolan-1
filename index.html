@@ -32,7 +32,6 @@ body{
     width:100%;
     height:110px;
 
-    /* MER GRADIENT */
     background:
     linear-gradient(
         90deg,
@@ -46,6 +45,12 @@ body{
     align-items:center;
     padding:0 18px;
     box-shadow:0 1px 2px rgba(0,0,0,0.1);
+
+    /* FIXERAD TOPBAR */
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
 }
 
 .left-side{
@@ -128,7 +133,7 @@ body{
     font-size:14px;
 }
 
-/* SVENSK FLAGGA */
+/* FLAG */
 
 .flag{
     width:22px;
@@ -176,7 +181,10 @@ body{
     width:100%;
     display:flex;
     justify-content:center;
-    padding-top:40px;
+
+    /* plats för fixerad topbar */
+    padding-top:150px;
+
     padding-bottom:35px;
 }
 
@@ -330,7 +338,7 @@ body{
     max-width:640px;
 }
 
-/* LÅNG BLÅ TEXT SOM KNAPP */
+/* FOOTER BUTTON */
 
 .footer-button{
     color:#4c7b90;
@@ -377,12 +385,15 @@ body{
     color:#2d6e93;
 }
 
+/* STÖRRE BLÅ PILAR */
+
 .week-link .material-symbols-outlined{
-    font-size:20px;
+    font-size:28px;
+    color:#2d6e93;
 
     font-variation-settings:
     'FILL' 0,
-    'wght' 200,
+    'wght' 250,
     'GRAD' 0,
     'opsz' 24;
 }
