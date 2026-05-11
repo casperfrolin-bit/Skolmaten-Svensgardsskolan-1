@@ -46,7 +46,6 @@ body{
     padding:0 18px;
     box-shadow:0 1px 2px rgba(0,0,0,0.1);
 
-    /* FIXERAD TOPBAR */
     position:fixed;
     top:0;
     left:0;
@@ -58,8 +57,6 @@ body{
     align-items:center;
     width:100%;
 }
-
-/* LOGO */
 
 .logo{
     display:flex;
@@ -77,8 +74,6 @@ body{
     margin-right:8px;
     display:block;
 }
-
-/* SEARCH */
 
 .search{
     flex:1;
@@ -103,15 +98,7 @@ body{
     transform:translateY(-50%);
     color:#777;
     font-size:22px;
-
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 200,
-    'GRAD' 0,
-    'opsz' 24;
 }
-
-/* RIGHT */
 
 .right-side{
     display:flex;
@@ -132,8 +119,6 @@ body{
     cursor:pointer;
     font-size:14px;
 }
-
-/* FLAG */
 
 .flag{
     width:22px;
@@ -164,95 +149,24 @@ body{
     background:#FECC00;
 }
 
-/* LOGIN */
-
 .login{
     color:#FFFFFF;
     font-size:14px;
     font-weight:600;
-    cursor:pointer;
 }
-
-/* =========================
-   PAGE
-========================= */
 
 .page{
     width:100%;
     display:flex;
     justify-content:center;
-
-    /* plats för fixerad topbar */
     padding-top:150px;
-
     padding-bottom:35px;
 }
-
-/* CONTENT */
 
 .content{
     width:100%;
     max-width:620px;
-    min-height:calc(100vh - 130px);
 }
-
-/* TOP INFO ROW */
-
-.top-info{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:12px;
-}
-
-/* CITY */
-
-.city-link{
-    display:flex;
-    align-items:center;
-    gap:4px;
-    color:#000000;
-    font-size:15px;
-    font-weight:500;
-    cursor:pointer;
-    transition:0.2s;
-}
-
-.city-link:hover{
-    color:#2d6e93;
-}
-
-.city-link .material-symbols-outlined{
-    font-size:22px;
-
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 200,
-    'GRAD' 0,
-    'opsz' 24;
-}
-
-/* HEADER ICONS */
-
-.header-icons{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    color:#3f7186;
-}
-
-.header-icons .material-symbols-outlined{
-    font-size:23px;
-    cursor:pointer;
-
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 150,
-    'GRAD' 0,
-    'opsz' 24;
-}
-
-/* HEADER */
 
 .school-header{
     width:100%;
@@ -267,10 +181,7 @@ body{
 .school-title{
     font-size:21px;
     font-weight:700;
-    line-height:1;
 }
-
-/* BADGE */
 
 .school-badge{
     width:38px;
@@ -278,27 +189,19 @@ body{
     border-radius:50%;
     overflow:hidden;
     background:#16386a;
-    display:flex;
-    align-items:center;
-    justify-content:center;
 }
 
 .school-badge img{
     width:100%;
     height:100%;
     object-fit:contain;
-    display:block;
 }
-
-/* WEEK */
 
 .week{
     font-size:20px;
     font-weight:600;
     margin-bottom:10px;
 }
-
-/* DAYS */
 
 .day{
     border-bottom:1px solid #e7e7e7;
@@ -311,15 +214,11 @@ body{
     font-weight:600;
 }
 
-/* DATE */
-
 .date{
     color:#8f8f8f;
     font-size:12px;
     margin-bottom:5px;
 }
-
-/* MEALS */
 
 .meal{
     font-size:15px;
@@ -327,46 +226,10 @@ body{
     margin-bottom:4px;
 }
 
-/* FOOTER TEXT */
-
-.footer-text{
-    margin-top:20px;
-    margin-bottom:18px;
-    color:#4c7b90;
-    font-size:15px;
-    line-height:1.45;
-    max-width:640px;
-}
-
-/* FOOTER BUTTON */
-
-.footer-button{
-    color:#4c7b90;
-    text-decoration:none;
-    transition:0.2s;
-}
-
-.footer-button:hover{
-    color:#2d6e93;
-}
-
-.footer-text .material-symbols-outlined{
-    font-size:15px;
-    vertical-align:middle;
-
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 200,
-    'GRAD' 0,
-    'opsz' 24;
-}
-
-/* WEEK NAV */
-
 .week-nav{
     display:flex;
     justify-content:space-between;
-    margin-top:0;
+    margin-top:20px;
     padding-bottom:20px;
 }
 
@@ -378,94 +241,11 @@ body{
     cursor:pointer;
     font-size:15px;
     font-weight:500;
-    transition:0.2s;
 }
-
-.week-link:hover{
-    color:#2d6e93;
-}
-
-/* STÖRRE BLÅ PILAR */
 
 .week-link .material-symbols-outlined{
     font-size:28px;
     color:#2d6e93;
-
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 250,
-    'GRAD' 0,
-    'opsz' 24;
-}
-
-/* BOTTOM FOOTER */
-
-.bottom-footer{
-    width:100%;
-    background:
-    linear-gradient(
-        90deg,
-        #0f4d63 0%,
-        #05243c 50%,
-        #021327 100%
-    );
-
-    padding:40px 80px;
-    margin-top:40px;
-
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:40px;
-}
-
-.footer-column h3{
-    color:#f2b705;
-    font-size:20px;
-    margin-bottom:14px;
-}
-
-.footer-column a{
-    display:block;
-    color:white;
-    text-decoration:none;
-    margin-bottom:10px;
-    font-size:15px;
-    transition:0.2s;
-}
-
-.footer-column a:hover{
-    color:#8fc9ff;
-}
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    body{
-        zoom:1;
-    }
-
-    .content{
-        width:92%;
-        min-height:auto;
-    }
-
-    .logo{
-        min-width:auto;
-        margin-right:12px;
-    }
-
-    .search input{
-        font-size:13px;
-    }
-
-    .bottom-footer{
-        padding:30px 25px;
-        flex-direction:column;
-        gap:30px;
-    }
-
 }
 
 </style>
@@ -478,7 +258,7 @@ body{
 
         <div class="logo">
 
-            <img src="skolmaten_transparent_background-83ac975b.svg" alt="Skolmaten Logo">
+            <img src="skolmaten_transparent_background-83ac975b.svg">
 
             Skolmaten
 
@@ -502,10 +282,6 @@ body{
 
                 Svenska
 
-                <span class="material-symbols-outlined">
-                    expand_more
-                </span>
-
             </button>
 
             <div class="login">
@@ -522,32 +298,6 @@ body{
 
     <div class="content">
 
-        <div class="top-info">
-
-            <div class="city-link">
-
-                <span class="material-symbols-outlined">
-                    chevron_left
-                </span>
-
-                Helsingborgs stad
-
-            </div>
-
-            <div class="header-icons">
-
-                <span class="material-symbols-outlined">
-                    print
-                </span>
-
-                <span class="material-symbols-outlined">
-                    rss_feed
-                </span>
-
-            </div>
-
-        </div>
-
         <div class="school-header">
 
             <div class="school-title">
@@ -555,108 +305,20 @@ body{
             </div>
 
             <div class="school-badge">
-                <img src="nedladdning (4).png" alt="Helsingborg">
+                <img src="nedladdning (4).png">
             </div>
 
         </div>
 
-        <div class="week">
+        <div class="week" id="weekTitle">
             Vecka 20
         </div>
 
-        <div class="day">
-
-            <h3>Måndag</h3>
-
-            <div class="date">2026-05-11</div>
-
-            <div class="meal">
-                Pasta Bolognese på svensk köttråvara, samt grönsaksbuffé
-            </div>
-
-            <div class="meal">
-                Färssås med pasta samt grönsaksbuffé
-            </div>
-
-        </div>
-
-        <div class="day">
-
-            <h3>Tisdag</h3>
-
-            <div class="date">2026-05-12</div>
-
-            <div class="meal">
-                Fransk kycklinggryta på svensk köttråvara serveras med ris samt grönsaksbuffé
-            </div>
-
-            <div class="meal">
-                Kökets paj serveras med grönsaksbuffé
-            </div>
-
-        </div>
-
-        <div class="day">
-
-            <h3>Onsdag</h3>
-
-            <div class="date">2026-05-13</div>
-
-            <div class="meal">
-                Pulled pork på svensk köttråvara serveras med bröd,
-                klyftpotatis och dressing samt grönsaksbuffé
-            </div>
-
-            <div class="meal">
-                Pulled BBQ med bulgur och dressing samt grönsaksbuffé
-            </div>
-
-        </div>
-
-        <div class="day">
-
-            <h3>Torsdag</h3>
-
-            <div class="date">2026-05-14</div>
-
-            <div class="meal">
-                KRISTIHIMMELSFÄRD
-            </div>
-
-        </div>
-
-        <div class="day">
-
-            <h3>Fredag</h3>
-
-            <div class="date">2026-05-15</div>
-
-            <div class="meal">
-                KLÄMDAG
-            </div>
-
-        </div>
-
-        <div class="footer-text">
-
-            <a href="#" class="footer-button">
-
-                <span class="material-symbols-outlined">
-                    link
-                </span>
-
-                Vi strävar efter att erbjuda god och näringsrik mat varje dag. Till varje måltid serveras ett
-                urval av grönsaker, anpassat efter säsong och vad som passar till dagens rätt. Vi lagar så
-                mycket som möjligt från grunden och har som mål att använda så mycket ekologiska råvaror
-                som vi kan. Vi reserverar oss för eventuella förändringar i matsedeln.
-
-            </a>
-
-        </div>
+        <div id="menuContainer"></div>
 
         <div class="week-nav">
 
-            <div class="week-link">
+            <div class="week-link" id="prevWeek">
 
                 <span class="material-symbols-outlined">
                     chevron_left
@@ -666,7 +328,7 @@ body{
 
             </div>
 
-            <div class="week-link">
+            <div class="week-link" id="nextWeek">
 
                 Nästa vecka
 
@@ -682,39 +344,160 @@ body{
 
 </div>
 
-<!-- FOOTER -->
+<script>
 
-<div class="bottom-footer">
+/* =========================
+   VECKOR
+========================= */
 
-    <div class="footer-column">
+const weeks = {
 
-        <h3>Om Skolmaten</h3>
+    20: {
+        monday: "2026-05-11",
+        tuesday: "2026-05-12",
+        wednesday: "2026-05-13",
+        thursday: "2026-05-14",
+        friday: "2026-05-15"
+    },
 
-        <a href="#">Information</a>
-        <a href="#">Cookies</a>
-        <a href="#">API</a>
-        <a href="#">Kontakta oss</a>
+    21: {
+        monday: "2026-05-18",
+        tuesday: "2026-05-19",
+        wednesday: "2026-05-20",
+        thursday: "2026-05-21",
+        friday: "2026-05-22"
+    },
 
-    </div>
+    22: {
+        monday: "2026-05-25",
+        tuesday: "2026-05-26",
+        wednesday: "2026-05-27",
+        thursday: "2026-05-28",
+        friday: "2026-05-29"
+    }
 
-    <div class="footer-column">
+};
 
-        <h3>Appar</h3>
+/* =========================
+   AKTUELL VECKA
+========================= */
 
-        <a href="#">iOS</a>
-        <a href="#">Android</a>
+let currentWeek = 20;
 
-    </div>
+/* =========================
+   RENDER
+========================= */
 
-    <div class="footer-column">
+function renderWeek(){
 
-        <h3>Administration</h3>
+    document.getElementById("weekTitle").innerText =
+        "Vecka " + currentWeek;
 
-        <a href="#" style="color:#FFFFFF;">Logga in</a>
+    const week = weeks[currentWeek];
 
-    </div>
+    const container = document.getElementById("menuContainer");
 
-</div>
+    container.innerHTML = `
+
+        <div class="day">
+
+            <h3>Måndag</h3>
+
+            <div class="date">${week.monday}</div>
+
+            <div class="meal">
+                Samma mat här senare
+            </div>
+
+        </div>
+
+        <div class="day">
+
+            <h3>Tisdag</h3>
+
+            <div class="date">${week.tuesday}</div>
+
+            <div class="meal">
+                Samma mat här senare
+            </div>
+
+        </div>
+
+        <div class="day">
+
+            <h3>Onsdag</h3>
+
+            <div class="date">${week.wednesday}</div>
+
+            <div class="meal">
+                Samma mat här senare
+            </div>
+
+        </div>
+
+        <div class="day">
+
+            <h3>Torsdag</h3>
+
+            <div class="date">${week.thursday}</div>
+
+            <div class="meal">
+                Samma mat här senare
+            </div>
+
+        </div>
+
+        <div class="day">
+
+            <h3>Fredag</h3>
+
+            <div class="date">${week.friday}</div>
+
+            <div class="meal">
+                Samma mat här senare
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+/* =========================
+   KNAPPAR
+========================= */
+
+document.getElementById("prevWeek").onclick = () => {
+
+    if(currentWeek > 20){
+
+        currentWeek--;
+
+        renderWeek();
+
+    }
+
+};
+
+document.getElementById("nextWeek").onclick = () => {
+
+    if(currentWeek < 22){
+
+        currentWeek++;
+
+        renderWeek();
+
+    }
+
+};
+
+/* =========================
+   START
+========================= */
+
+renderWeek();
+
+</script>
 
 </body>
 </html>
