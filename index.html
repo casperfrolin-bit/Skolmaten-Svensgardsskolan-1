@@ -1,10 +1,10 @@
-```html
 <!DOCTYPE html>
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skolmaten - Svensgårdsskolan</title>
+
+<title>Skolmaten</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
@@ -18,7 +18,7 @@
 
 body{
     font-family:"Segoe UI", Arial, sans-serif;
-    background:#f3f3f3;
+    background:#f5f5f5;
     color:#222;
 }
 
@@ -32,33 +32,30 @@ body{
     background:linear-gradient(to right,#07344b,#021327);
     display:flex;
     align-items:center;
-    justify-content:space-between;
     padding:0 18px;
+    box-shadow:0 1px 2px rgba(0,0,0,0.1);
 }
 
 .left-side{
     display:flex;
     align-items:center;
-    gap:20px;
     width:100%;
 }
 
-/* =========================
-   LOGO
-========================= */
+/* LOGO */
 
 .logo{
     display:flex;
     align-items:center;
     color:white;
     font-weight:700;
-    font-size:26px;
-    min-width:220px;
+    font-size:22px;
+    min-width:190px;
 }
 
 .logo-circle{
-    width:38px;
-    height:38px;
+    width:34px;
+    height:34px;
     border-radius:50%;
     background:white;
     margin-right:12px;
@@ -71,7 +68,7 @@ body{
     left:10px;
     top:7px;
     width:4px;
-    height:22px;
+    height:20px;
     background:#0c4f69;
     border-radius:2px;
 }
@@ -82,197 +79,239 @@ body{
     right:10px;
     top:7px;
     width:4px;
-    height:22px;
+    height:20px;
     background:#0c4f69;
     border-radius:2px;
 }
 
-.logo-middle{
-    position:absolute;
-    left:17px;
-    top:7px;
-    width:4px;
-    height:22px;
-    background:#0c4f69;
-    border-radius:2px;
-}
+/* SEARCH */
 
-/* =========================
-   SEARCH BAR
-========================= */
-
-.searchbar{
+.search{
     flex:1;
-    height:40px;
-    border-radius:4px;
+    position:relative;
+}
+
+.search input{
+    width:100%;
+    height:42px;
     border:none;
-    padding:0 16px;
+    border-radius:4px;
+    padding-left:42px;
     font-size:15px;
     outline:none;
+    background:#f2f2f2;
 }
 
-/* =========================
-   RIGHT SIDE
-========================= */
+.search .material-symbols-outlined{
+    position:absolute;
+    left:12px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#777;
+    font-size:22px;
+}
+
+/* RIGHT */
 
 .right-side{
     display:flex;
     align-items:center;
     gap:18px;
-    margin-left:20px;
-    color:white;
-    font-size:15px;
-    white-space:nowrap;
+    margin-left:18px;
 }
 
-.language{
+.language-btn{
+    background:white;
+    border:none;
+    border-radius:4px;
+    height:38px;
+    padding:0 12px;
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:10px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.flag{
+    width:20px;
+    height:14px;
+    background:
+    linear-gradient(to right,
+    #005293 32%,
+    #FECB00 32%,
+    #FECB00 42%,
+    #005293 42%),
+    linear-gradient(to bottom,
+    #005293 40%,
+    #FECB00 40%,
+    #FECB00 58%,
+    #005293 58%);
 }
 
 .login{
+    color:white;
+    font-size:15px;
     font-weight:600;
+    cursor:pointer;
 }
 
 /* =========================
-   MAIN CONTAINER
+   PAGE
 ========================= */
 
 .page{
     width:100%;
     display:flex;
     justify-content:center;
-    padding:42px 20px;
+    padding-top:40px;
 }
+
+/* CONTENT */
 
 .content{
-    width:520px;
+    width:500px;
 }
 
-.back-link{
+/* CITY */
+
+.city-link{
     display:flex;
     align-items:center;
-    gap:4px;
-    color:#4b6575;
-    font-size:14px;
-    margin-bottom:18px;
+    gap:2px;
+    color:#47667d;
+    font-size:15px;
+    margin-bottom:16px;
     cursor:pointer;
 }
 
-.school-title{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:4px solid #d8a700;
-    padding-bottom:10px;
-    margin-bottom:24px;
+.city-link .material-symbols-outlined{
+    font-size:20px;
 }
 
-.school-title h1{
-    font-size:40px;
+/* HEADER */
+
+.school-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    border-bottom:3px solid #efb300;
+    padding-bottom:10px;
+    margin-bottom:14px;
+}
+
+.school-title{
+    font-size:19px;
     font-weight:700;
 }
 
-.school-icon{
-    width:42px;
-    height:42px;
+.header-icons{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#3f7186;
+}
+
+.header-icons .material-symbols-outlined{
+    font-size:20px;
+    cursor:pointer;
+}
+
+.school-badge{
+    width:36px;
+    height:36px;
     border-radius:50%;
-    background:#12395a;
+    background:#1d4e76;
     display:flex;
     align-items:center;
     justify-content:center;
     color:white;
-    font-size:20px;
+    font-size:13px;
 }
 
-.week-title{
-    font-size:36px;
-    font-weight:600;
-    margin-bottom:26px;
-}
+/* WEEK */
 
-.day{
-    padding-bottom:18px;
-    margin-bottom:18px;
-    border-bottom:1px solid #ddd;
-}
-
-.day h2{
-    font-size:28px;
-    margin-bottom:4px;
-}
-
-.date{
-    color:#777;
-    font-size:14px;
+.week{
+    font-size:24px;
+    font-weight:700;
     margin-bottom:12px;
 }
 
-.menu-item{
-    font-size:18px;
-    line-height:1.5;
-    margin-bottom:10px;
+/* DAYS */
+
+.day{
+    border-bottom:1px solid #e7e7e7;
+    padding:12px 0;
 }
 
-.info-text{
-    margin-top:28px;
-    color:#5f7c8b;
+.day h3{
+    font-size:20px;
+    margin-bottom:2px;
+    font-weight:600;
+}
+
+/* DATE */
+
+.date{
+    color:#8f8f8f;
+    font-size:12px;
+    margin-bottom:4px;
+}
+
+/* MEALS */
+
+.meal{
+    font-size:17px;
+    line-height:1.45;
+    margin-bottom:4px;
+}
+
+/* FOOTER */
+
+.footer-text{
+    margin-top:20px;
+    color:#4c7b90;
+    font-size:14px;
     line-height:1.6;
-    font-size:15px;
 }
 
-.week-navigation{
-    margin-top:30px;
+.footer-text .material-symbols-outlined{
+    font-size:14px;
+    vertical-align:middle;
+}
+
+/* WEEK NAV */
+
+.week-nav{
     display:flex;
     justify-content:space-between;
-    color:#3c5d70;
-    font-size:15px;
+    margin-top:22px;
+    padding-bottom:40px;
 }
 
-.arrow-link{
+.week-link{
     display:flex;
     align-items:center;
     gap:4px;
+    color:#346f8d;
     cursor:pointer;
+    font-size:15px;
 }
 
-.material-symbols-outlined{
+.week-link .material-symbols-outlined{
     font-size:20px;
 }
 
+/* MOBILE */
+
 @media(max-width:700px){
 
-    .topbar{
-        height:auto;
-        padding:14px;
+    .content{
+        width:92%;
     }
 
-    .left-side{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .right-side{
-        width:100%;
-        justify-content:space-between;
-        margin-left:0;
-    }
-
-    .school-title h1{
-        font-size:30px;
-    }
-
-    .week-title{
-        font-size:28px;
-    }
-
-    .day h2{
-        font-size:24px;
-    }
-
-    .menu-item{
-        font-size:16px;
+    .login{
+        display:none;
     }
 
 }
@@ -281,145 +320,197 @@ body{
 </head>
 <body>
 
-<!-- =========================
-     TOPBAR
-========================= -->
-
 <div class="topbar">
 
     <div class="left-side">
 
         <div class="logo">
-            <div class="logo-circle">
-                <div class="logo-middle"></div>
-            </div>
+
+            <div class="logo-circle"></div>
+
             Skolmaten
+
         </div>
 
-        <input type="text" class="searchbar" placeholder="Sök">
+        <div class="search">
 
-    </div>
+            <span class="material-symbols-outlined">
+                search
+            </span>
 
-    <div class="right-side">
+            <input type="text" placeholder="Sök">
 
-        <div class="language">
-            🇸🇪 Svenska
         </div>
 
-        <div class="login">
-            Logga in
+        <div class="right-side">
+
+            <button class="language-btn">
+
+                <div class="flag"></div>
+
+                Svenska
+
+                <span class="material-symbols-outlined">
+                    expand_more
+                </span>
+
+            </button>
+
+            <div class="login">
+                Logga in
+            </div>
+
         </div>
 
     </div>
 
 </div>
 
-<!-- =========================
-     PAGE CONTENT
-========================= -->
-
 <div class="page">
 
     <div class="content">
 
-        <div class="back-link">
-            <span class="material-symbols-outlined">chevron_left</span>
+        <div class="city-link">
+
+            <span class="material-symbols-outlined">
+                chevron_left
+            </span>
+
             Helsingborgs stad
+
         </div>
 
-        <div class="school-title">
-            <h1>Svensgårdsskolan</h1>
+        <div class="school-header">
 
-            <div class="school-icon">
-                🍽
+            <div class="school-title">
+                Svensgårdsskolan
             </div>
+
+            <div class="header-icons">
+
+                <span class="material-symbols-outlined">
+                    print
+                </span>
+
+                <span class="material-symbols-outlined">
+                    rss_feed
+                </span>
+
+                <div class="school-badge">
+                    ☰
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="week-title">
+        <div class="week">
             Vecka 20
         </div>
 
-        <!-- Måndag -->
-
         <div class="day">
-            <h2>Måndag</h2>
+
+            <h3>Måndag</h3>
+
             <div class="date">2026-05-11</div>
 
-            <div class="menu-item">
+            <div class="meal">
                 Pasta Bolognese på svensk köttråvara, samt grönsaksbuffé
             </div>
 
-            <div class="menu-item">
+            <div class="meal">
                 Färssås med pasta samt grönsaksbuffé
             </div>
+
         </div>
 
-        <!-- Tisdag -->
-
         <div class="day">
-            <h2>Tisdag</h2>
+
+            <h3>Tisdag</h3>
+
             <div class="date">2026-05-12</div>
 
-            <div class="menu-item">
+            <div class="meal">
                 Fransk kycklinggryta på svensk köttråvara serveras med ris samt grönsaksbuffé
             </div>
 
-            <div class="menu-item">
+            <div class="meal">
                 Kökets paj serveras med grönsaksbuffé
             </div>
+
         </div>
 
-        <!-- Onsdag -->
-
         <div class="day">
-            <h2>Onsdag</h2>
+
+            <h3>Onsdag</h3>
+
             <div class="date">2026-05-13</div>
 
-            <div class="menu-item">
-                Pulled pork på svensk köttråvara serveras med bröd, klyftpotatis och dressing samt grönsaksbuffé
+            <div class="meal">
+                Pulled pork på svensk köttråvara serveras med bröd,
+                klyftpotatis och dressing samt grönsaksbuffé
             </div>
 
-            <div class="menu-item">
+            <div class="meal">
                 Pulled BBQ med bulgur och dressing samt grönsaksbuffé
             </div>
+
         </div>
 
-        <!-- Torsdag -->
-
         <div class="day">
-            <h2>Torsdag</h2>
+
+            <h3>Torsdag</h3>
+
             <div class="date">2026-05-14</div>
 
-            <div class="menu-item">
+            <div class="meal">
                 KRISTIHIMMELSFÄRD
             </div>
-        </div>
 
-        <!-- Fredag -->
+        </div>
 
         <div class="day">
-            <h2>Fredag</h2>
+
+            <h3>Fredag</h3>
+
             <div class="date">2026-05-15</div>
 
-            <div class="menu-item">
+            <div class="meal">
                 KLÄMDAG
             </div>
+
         </div>
 
-        <div class="info-text">
-            Vi strävar efter att erbjuda god och näringsrik mat varje dag. Till varje måltid serveras ett urval av grönsaker, anpassat efter säsong och vad som passar till dagens rätt.
+        <div class="footer-text">
+
+            <span class="material-symbols-outlined">
+                link
+            </span>
+
+            Vi strävar efter att erbjuda god och näringsrik mat varje dag.
+
         </div>
 
-        <div class="week-navigation">
+        <div class="week-nav">
 
-            <div class="arrow-link">
-                <span class="material-symbols-outlined">chevron_left</span>
+            <div class="week-link">
+
+                <span class="material-symbols-outlined">
+                    chevron_left
+                </span>
+
                 Föregående vecka
+
             </div>
 
-            <div class="arrow-link">
+            <div class="week-link">
+
                 Nästa vecka
-                <span class="material-symbols-outlined">chevron_right</span>
+
+                <span class="material-symbols-outlined">
+                    chevron_right
+                </span>
+
             </div>
 
         </div>
@@ -430,4 +521,3 @@ body{
 
 </body>
 </html>
-```
