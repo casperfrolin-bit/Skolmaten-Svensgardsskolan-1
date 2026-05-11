@@ -153,6 +153,7 @@ body{
     color:#FFFFFF;
     font-size:14px;
     font-weight:600;
+    cursor:pointer;
 }
 
 .page{
@@ -166,6 +167,34 @@ body{
 .content{
     width:100%;
     max-width:620px;
+    min-height:calc(100vh - 130px);
+}
+
+.top-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.city-link{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    color:#000000;
+    font-size:15px;
+    font-weight:500;
+}
+
+.header-icons{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    color:#3f7186;
+}
+
+.header-icons .material-symbols-outlined{
+    font-size:23px;
 }
 
 .school-header{
@@ -189,6 +218,9 @@ body{
     border-radius:50%;
     overflow:hidden;
     background:#16386a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .school-badge img{
@@ -226,10 +258,17 @@ body{
     margin-bottom:4px;
 }
 
+.footer-text{
+    margin-top:20px;
+    margin-bottom:18px;
+    color:#4c7b90;
+    font-size:15px;
+    line-height:1.45;
+}
+
 .week-nav{
     display:flex;
     justify-content:space-between;
-    margin-top:20px;
     padding-bottom:20px;
 }
 
@@ -248,6 +287,39 @@ body{
     color:#2d6e93;
 }
 
+.bottom-footer{
+    width:100%;
+    background:
+    linear-gradient(
+        90deg,
+        #0f4d63 0%,
+        #05243c 50%,
+        #021327 100%
+    );
+
+    padding:40px 80px;
+    margin-top:40px;
+
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:40px;
+}
+
+.footer-column h3{
+    color:#f2b705;
+    font-size:20px;
+    margin-bottom:14px;
+}
+
+.footer-column a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin-bottom:10px;
+    font-size:15px;
+}
+
 </style>
 </head>
 <body>
@@ -258,7 +330,7 @@ body{
 
         <div class="logo">
 
-            <img src="skolmaten_transparent_background-83ac975b.svg">
+            <img src="skolmaten_transparent_background-83ac975b.svg" alt="Skolmaten Logo">
 
             Skolmaten
 
@@ -298,6 +370,32 @@ body{
 
     <div class="content">
 
+        <div class="top-info">
+
+            <div class="city-link">
+
+                <span class="material-symbols-outlined">
+                    chevron_left
+                </span>
+
+                Helsingborgs stad
+
+            </div>
+
+            <div class="header-icons">
+
+                <span class="material-symbols-outlined">
+                    print
+                </span>
+
+                <span class="material-symbols-outlined">
+                    rss_feed
+                </span>
+
+            </div>
+
+        </div>
+
         <div class="school-header">
 
             <div class="school-title">
@@ -305,20 +403,26 @@ body{
             </div>
 
             <div class="school-badge">
-                <img src="nedladdning (4).png">
+                <img src="nedladdning (4).png" alt="Helsingborg">
             </div>
 
         </div>
 
-        <div class="week" id="weekTitle">
+        <div class="week" id="weekText">
             Vecka 20
         </div>
 
-        <div id="menuContainer"></div>
+        <div id="menuContent"></div>
+
+        <div class="footer-text">
+
+            Vi strävar efter att erbjuda god och näringsrik mat varje dag.
+
+        </div>
 
         <div class="week-nav">
 
-            <div class="week-link" id="prevWeek">
+            <div class="week-link" id="prevBtn">
 
                 <span class="material-symbols-outlined">
                     chevron_left
@@ -328,7 +432,7 @@ body{
 
             </div>
 
-            <div class="week-link" id="nextWeek">
+            <div class="week-link" id="nextBtn">
 
                 Nästa vecka
 
@@ -344,119 +448,123 @@ body{
 
 </div>
 
+<div class="bottom-footer">
+
+    <div class="footer-column">
+
+        <h3>Om Skolmaten</h3>
+
+        <a href="#">Information</a>
+        <a href="#">Cookies</a>
+        <a href="#">API</a>
+        <a href="#">Kontakta oss</a>
+
+    </div>
+
+    <div class="footer-column">
+
+        <h3>Appar</h3>
+
+        <a href="#">iOS</a>
+        <a href="#">Android</a>
+
+    </div>
+
+    <div class="footer-column">
+
+        <h3>Administration</h3>
+
+        <a href="#">Logga in</a>
+
+    </div>
+
+</div>
+
 <script>
 
 /* =========================
-   VECKOR
-========================= */
-
-const weeks = {
-
-    20: {
-        monday: "2026-05-11",
-        tuesday: "2026-05-12",
-        wednesday: "2026-05-13",
-        thursday: "2026-05-14",
-        friday: "2026-05-15"
-    },
-
-    21: {
-        monday: "2026-05-18",
-        tuesday: "2026-05-19",
-        wednesday: "2026-05-20",
-        thursday: "2026-05-21",
-        friday: "2026-05-22"
-    },
-
-    22: {
-        monday: "2026-05-25",
-        tuesday: "2026-05-26",
-        wednesday: "2026-05-27",
-        thursday: "2026-05-28",
-        friday: "2026-05-29"
-    }
-
-};
-
-/* =========================
-   AKTUELL VECKA
+   STARTVECKA
 ========================= */
 
 let currentWeek = 20;
 
 /* =========================
-   RENDER
+   SKAPA DATUM
+========================= */
+
+function getWeekDates(weekNumber){
+
+    const firstDay = new Date(2026, 0, 1);
+
+    const days = (weekNumber - 1) * 7;
+
+    firstDay.setDate(firstDay.getDate() + days);
+
+    const monday = new Date(firstDay);
+
+    monday.setDate(monday.getDate() - monday.getDay() + 1);
+
+    const dates = [];
+
+    for(let i = 0; i < 5; i++){
+
+        const d = new Date(monday);
+
+        d.setDate(monday.getDate() + i);
+
+        dates.push(
+            d.getFullYear() + "-" +
+            String(d.getMonth()+1).padStart(2,"0") + "-" +
+            String(d.getDate()).padStart(2,"0")
+        );
+
+    }
+
+    return dates;
+
+}
+
+/* =========================
+   VISA VECKA
 ========================= */
 
 function renderWeek(){
 
-    document.getElementById("weekTitle").innerText =
+    document.getElementById("weekText").innerText =
         "Vecka " + currentWeek;
 
-    const week = weeks[currentWeek];
+    const dates = getWeekDates(currentWeek);
 
-    const container = document.getElementById("menuContainer");
-
-    container.innerHTML = `
+    document.getElementById("menuContent").innerHTML = `
 
         <div class="day">
-
             <h3>Måndag</h3>
-
-            <div class="date">${week.monday}</div>
-
-            <div class="meal">
-                Samma mat här senare
-            </div>
-
+            <div class="date">${dates[0]}</div>
+            <div class="meal">Ingen mat inlagd ännu</div>
         </div>
 
         <div class="day">
-
             <h3>Tisdag</h3>
-
-            <div class="date">${week.tuesday}</div>
-
-            <div class="meal">
-                Samma mat här senare
-            </div>
-
+            <div class="date">${dates[1]}</div>
+            <div class="meal">Ingen mat inlagd ännu</div>
         </div>
 
         <div class="day">
-
             <h3>Onsdag</h3>
-
-            <div class="date">${week.wednesday}</div>
-
-            <div class="meal">
-                Samma mat här senare
-            </div>
-
+            <div class="date">${dates[2]}</div>
+            <div class="meal">Ingen mat inlagd ännu</div>
         </div>
 
         <div class="day">
-
             <h3>Torsdag</h3>
-
-            <div class="date">${week.thursday}</div>
-
-            <div class="meal">
-                Samma mat här senare
-            </div>
-
+            <div class="date">${dates[3]}</div>
+            <div class="meal">Ingen mat inlagd ännu</div>
         </div>
 
         <div class="day">
-
             <h3>Fredag</h3>
-
-            <div class="date">${week.friday}</div>
-
-            <div class="meal">
-                Samma mat här senare
-            </div>
-
+            <div class="date">${dates[4]}</div>
+            <div class="meal">Ingen mat inlagd ännu</div>
         </div>
 
     `;
@@ -467,9 +575,9 @@ function renderWeek(){
    KNAPPAR
 ========================= */
 
-document.getElementById("prevWeek").onclick = () => {
+document.getElementById("prevBtn").onclick = () => {
 
-    if(currentWeek > 20){
+    if(currentWeek > 1){
 
         currentWeek--;
 
@@ -479,9 +587,9 @@ document.getElementById("prevWeek").onclick = () => {
 
 };
 
-document.getElementById("nextWeek").onclick = () => {
+document.getElementById("nextBtn").onclick = () => {
 
-    if(currentWeek < 22){
+    if(currentWeek < 52){
 
         currentWeek++;
 
