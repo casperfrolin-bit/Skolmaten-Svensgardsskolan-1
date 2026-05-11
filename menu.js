@@ -153,7 +153,7 @@ fredag: { mat: ["", ""] }
 }},
 
 20: { dagar: {
-måndag: { mat: ["", ""] },
+måndag: { mat: ["Kattmat med bajs", ""] },
 tisdag: { mat: ["", ""] },
 onsdag: { mat: ["", ""] },
 torsdag: { mat: ["", ""] },
