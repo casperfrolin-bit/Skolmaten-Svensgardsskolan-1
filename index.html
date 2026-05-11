@@ -156,13 +156,22 @@ body{
     cursor:pointer;
 }
 
+/* =========================
+   PAGE
+========================= */
+
 .page{
     width:100%;
     display:flex;
     justify-content:center;
-    padding-top:150px;
+
+    /* MINDRE MELLANRUM */
+    padding-top:110px;
+
     padding-bottom:35px;
 }
+
+/* CONTENT */
 
 .content{
     width:100%;
@@ -170,12 +179,16 @@ body{
     min-height:calc(100vh - 130px);
 }
 
+/* TOP INFO ROW */
+
 .top-info{
     display:flex;
     justify-content:space-between;
     align-items:center;
     margin-bottom:12px;
 }
+
+/* CITY */
 
 .city-link{
     display:flex;
@@ -196,6 +209,8 @@ body{
 .header-icons .material-symbols-outlined{
     font-size:23px;
 }
+
+/* HEADER */
 
 .school-header{
     width:100%;
@@ -229,11 +244,15 @@ body{
     object-fit:contain;
 }
 
+/* WEEK */
+
 .week{
     font-size:20px;
     font-weight:600;
     margin-bottom:10px;
 }
+
+/* DAYS */
 
 .day{
     border-bottom:1px solid #e7e7e7;
@@ -246,17 +265,23 @@ body{
     font-weight:600;
 }
 
+/* DATE */
+
 .date{
     color:#8f8f8f;
     font-size:12px;
     margin-bottom:5px;
 }
 
+/* MEALS */
+
 .meal{
     font-size:15px;
     line-height:1.5;
     margin-bottom:4px;
 }
+
+/* FOOTER TEXT */
 
 .footer-text{
     margin-top:20px;
@@ -265,6 +290,8 @@ body{
     font-size:15px;
     line-height:1.45;
 }
+
+/* WEEK NAV */
 
 .week-nav{
     display:flex;
@@ -286,6 +313,8 @@ body{
     font-size:28px;
     color:#2d6e93;
 }
+
+/* FOOTER */
 
 .bottom-footer{
     width:100%;
@@ -330,7 +359,7 @@ body{
 
         <div class="logo">
 
-            <img src="skolmaten_transparent_background-83ac975b.svg" alt="Skolmaten Logo">
+            <img src="skolmaten_transparent_background-83ac975b.svg">
 
             Skolmaten
 
@@ -403,7 +432,7 @@ body{
             </div>
 
             <div class="school-badge">
-                <img src="nedladdning (4).png" alt="Helsingborg">
+                <img src="nedladdning (4).png">
             </div>
 
         </div>
@@ -415,9 +444,7 @@ body{
         <div id="menuContent"></div>
 
         <div class="footer-text">
-
             Vi strävar efter att erbjuda god och näringsrik mat varje dag.
-
         </div>
 
         <div class="week-nav">
@@ -481,10 +508,6 @@ body{
 </div>
 
 <script>
-
-/* =========================
-   STARTVECKA
-========================= */
 
 let currentWeek = 20;
 
@@ -598,10 +621,6 @@ document.getElementById("nextBtn").onclick = () => {
     }
 
 };
-
-/* =========================
-   START
-========================= */
 
 renderWeek();
 
