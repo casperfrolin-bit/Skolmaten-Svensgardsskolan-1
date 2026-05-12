@@ -20,6 +20,11 @@
     box-sizing:border-box;
 }
 
+html,
+body{
+    min-height:100%;
+}
+
 body{
 
     font-family:"Segoe UI", Arial, sans-serif;
@@ -45,7 +50,13 @@ body{
     width:100%;
     height:72px;
 
-    background:linear-gradient(90deg,#0d4b61,#03243c,#021326);
+    /* NY GRADIENT */
+    background:linear-gradient(
+        90deg,
+        #0b374a 0%,
+        #0b374a 68%,
+        #020618 100%
+    );
 
     display:flex;
     align-items:center;
@@ -158,15 +169,18 @@ body{
     display:flex;
     justify-content:center;
 
-    padding-top:100px;
+    padding-top:115px;
 
-    padding-bottom:120px;
+    padding-bottom:260px;
 }
+
+/* CONTENT */
 
 .content{
 
     width:100%;
-    max-width:470px;
+
+    max-width:560px;
 }
 
 /* =========================
@@ -199,9 +213,11 @@ body{
     margin-bottom:10px;
 }
 
+/* SCHOOL TITLE */
+
 .school-title{
 
-    font-size:19px;
+    font-size:23px;
     font-weight:600;
 }
 
@@ -233,7 +249,7 @@ body{
     cursor:pointer;
 }
 
-/* LOGO */
+/* CITY LOGO */
 
 .city-logo{
 
@@ -259,10 +275,10 @@ body{
 
 .week{
 
-    font-size:17px;
+    font-size:20px;
     font-weight:600;
 
-    margin-bottom:2px;
+    margin-bottom:6px;
 }
 
 /* =========================
@@ -273,31 +289,31 @@ body{
 
     border-bottom:1px solid #e5e5e5;
 
-    padding:10px 0;
+    padding:12px 0;
 }
 
 .day h3{
 
-    font-size:15px;
+    font-size:17px;
     font-weight:600;
 
-    margin-bottom:1px;
+    margin-bottom:2px;
 }
 
 .date{
 
-    font-size:11px;
+    font-size:12px;
 
     color:#888;
 
-    margin-bottom:4px;
+    margin-bottom:5px;
 }
 
 .meal{
 
-    font-size:13px;
+    font-size:14px;
 
-    line-height:1.45;
+    line-height:1.55;
 }
 
 .meal div{
@@ -311,13 +327,14 @@ body{
 
 .menu-info{
 
-    margin-top:20px;
-    margin-bottom:14px;
+    margin-top:24px;
+    margin-bottom:16px;
 
     color:#2d87aa;
 
-    font-size:13px;
-    line-height:1.45;
+    font-size:14px;
+
+    line-height:1.5;
 
     cursor:pointer;
 }
@@ -331,9 +348,9 @@ body{
     display:flex;
     justify-content:space-between;
 
-    margin-top:8px;
+    margin-top:10px;
 
-    font-size:14px;
+    font-size:15px;
 }
 
 .week-nav div{
@@ -349,7 +366,13 @@ body{
 
     width:100%;
 
-    background:linear-gradient(90deg,#0d4b61,#021326);
+    /* NY GRADIENT */
+    background:linear-gradient(
+        90deg,
+        #0b374a 0%,
+        #0b374a 68%,
+        #020618 100%
+    );
 
     color:white;
 
@@ -358,7 +381,7 @@ body{
     display:flex;
     justify-content:space-between;
 
-    margin-top:80px;
+    margin-top:160px;
 }
 
 /* COLUMN */
@@ -561,21 +584,11 @@ body{
 
 </div>
 
-<!-- HÄMTAR MENYDATA -->
-
 <script src="menu.js"></script>
 
 <script>
 
-/* =========================
-   STARTVECKA
-========================= */
-
 let currentWeek = 20;
-
-/* =========================
-   DATUM
-========================= */
 
 function getWeekDates(week){
 
@@ -605,10 +618,6 @@ function getWeekDates(week){
     return d;
 }
 
-/* =========================
-   HÄMTA MAT
-========================= */
-
 function getMeals(week, day){
 
     if(
@@ -621,10 +630,6 @@ function getMeals(week, day){
 
     return [];
 }
-
-/* =========================
-   RENDER
-========================= */
 
 function renderWeek(){
 
@@ -680,10 +685,6 @@ function renderWeek(){
         html;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-
 document.getElementById("prevBtn").onclick = () => {
 
     if(currentWeek > 1){
@@ -703,8 +704,6 @@ document.getElementById("nextBtn").onclick = () => {
         renderWeek();
     }
 };
-
-/* START */
 
 renderWeek();
 
