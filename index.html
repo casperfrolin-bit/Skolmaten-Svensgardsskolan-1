@@ -217,12 +217,50 @@ body{
     overflow:hidden;
 }
 
-.flag img{
+/* KORREKT SVENSK FLAGGA */
 
-    width:100%;
+.sweden-flag{
+
+    position:relative;
+
+    width:18px;
+    height:12px;
+
+    background:#006aa7;
+
+    border-radius:2px;
+
+    overflow:hidden;
+}
+
+.sweden-flag::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:5px;
+    top:0;
+
+    width:2px;
     height:100%;
 
-    object-fit:cover;
+    background:#fecc00;
+}
+
+.sweden-flag::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:5px;
+
+    width:100%;
+    height:2px;
+
+    background:#fecc00;
 }
 
 /* LANGUAGE ARROW */
@@ -369,21 +407,24 @@ body{
     gap:12px;
 }
 
-/* TUNNARE */
+/* TUNNARE IKONER */
 
 .top-icon{
 
-    font-size:22px !important;
+    font-size:21px !important;
 
     font-variation-settings:
         'FILL' 0,
-        'wght' 300,
-        'GRAD' 0,
+        'wght' 180,
+        'GRAD' -25,
         'opsz' 24;
 
     color:#2d87aa;
 
     cursor:pointer;
+
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
 }
 
 /* =========================
@@ -392,8 +433,8 @@ body{
 
 .city-logo{
 
-    width:42px;
-    height:42px;
+    width:34px;
+    height:34px;
 
     border-radius:50%;
 
@@ -402,14 +443,18 @@ body{
     border:1px solid #d8d8d8;
 
     background:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 .city-logo img{
 
-    width:100%;
-    height:100%;
+    width:78%;
+    height:78%;
 
-    object-fit:cover;
+    object-fit:contain;
 }
 
 /* =========================
@@ -665,9 +710,7 @@ body{
 
         <div class="language">
 
-            <div class="flag">
-                <img src="https://flagcdn.com/w40/se.png">
-            </div>
+            <div class="flag sweden-flag"></div>
 
             Svenska
 
@@ -725,7 +768,7 @@ body{
 
             <div class="city-logo">
 
-                <img src="helsingborg.png">
+                <img src="nedladdning (4).png" alt="Helsingborg">
 
             </div>
 
