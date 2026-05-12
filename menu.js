@@ -145,7 +145,7 @@ fredag: { mat: ["", ""] }
 }},
 
 19: { dagar: {
-måndag: { mat: ["", ""] },
+måndag: { mat: ["Pankakor med sylt och soppa", ""] },
 tisdag: { mat: ["", ""] },
 onsdag: { mat: ["", ""] },
 torsdag: { mat: ["", ""] },
