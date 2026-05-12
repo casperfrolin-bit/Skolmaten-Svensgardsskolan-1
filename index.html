@@ -67,9 +67,9 @@ body{
 
     background:linear-gradient(
         90deg,
-        #0b374a 0%,
-        #0b374a 68%,
-        #020618 100%
+        #082c3b 0%,
+        #082c3b 68%,
+        #01030d 100%
     );
 
     display:flex;
@@ -298,7 +298,7 @@ body{
 
     font-size:15px;
 
-    font-weight:500;
+    font-weight:600;
 }
 
 /* PILEN I BÖRJAN */
@@ -373,11 +373,11 @@ body{
 
 .top-icon{
 
-    font-size:22px !important;
+    font-size:21px !important;
 
     font-variation-settings:
         'FILL' 0,
-        'wght' 300,
+        'wght' 200,
         'GRAD' 0,
         'opsz' 24;
 
@@ -392,8 +392,8 @@ body{
 
 .city-logo{
 
-    width:52px;
-    height:52px;
+    width:46px;
+    height:46px;
 
     border-radius:50%;
 
@@ -563,9 +563,9 @@ body{
 
     background:linear-gradient(
         90deg,
-        #0b374a 0%,
-        #0b374a 68%,
-        #020618 100%
+        #082c3b 0%,
+        #082c3b 68%,
+        #01030d 100%
     );
 
     color:white;
@@ -743,219 +743,9 @@ body{
 
     <div id="menuContent"></div>
 
-    <div class="menu-info">
-
-        <div class="menu-info-top">
-
-            <span class="material-symbols-outlined menu-link-icon">
-                link
-            </span>
-
-            <span>
-                Vi strävar efter att erbjuda god och näringsrik mat varje dag.
-                Till varje måltid serveras ett urval av grönsaker, anpassat efter
-                säsong och vad som passar till dagens rätt. Vi lagar så mycket
-                möjligt från grunden och har som mål att använda så mycket
-                ekologiska råvaror som vi kan. Vi reserverar oss för eventuella
-                förändringar i matsedeln.
-            </span>
-
-        </div>
-
-    </div>
-
-    <div class="week-nav">
-
-        <div class="week-button" id="prevBtn">
-
-            <span class="week-arrow">
-                ‹
-            </span>
-
-            Föregående vecka
-
-        </div>
-
-        <div class="week-button" id="nextBtn">
-
-            Nästa vecka
-
-            <span class="week-arrow">
-                ›
-            </span>
-
-        </div>
-
-    </div>
-
 </div>
 
 </div>
-
-<!-- FOOTER -->
-
-<div class="footer">
-
-    <div class="footer-column">
-
-        <div class="footer-title">
-            Om Skolmaten
-        </div>
-
-        <a href="#">Information</a>
-        <a href="#">Cookies</a>
-        <a href="#">API</a>
-        <a href="#">Kontakta oss</a>
-
-    </div>
-
-    <div class="footer-column">
-
-        <div class="footer-title">
-            Appar
-        </div>
-
-        <a href="#">iOS</a>
-        <a href="#">Android</a>
-
-    </div>
-
-    <div class="footer-column">
-
-        <div class="footer-title">
-            Administration
-        </div>
-
-        <a href="#">Logga in</a>
-
-    </div>
-
-</div>
-
-<script src="menu.js"></script>
-
-<script>
-
-let currentWeek = 20;
-
-function getWeekDates(week){
-
-    const start = new Date(2026,0,1);
-
-    start.setDate(
-        start.getDate() + (week - 1) * 7
-    );
-
-    start.setDate(
-        start.getDate() - start.getDay() + 1
-    );
-
-    let d = [];
-
-    for(let i = 0; i < 5; i++){
-
-        let x = new Date(start);
-
-        x.setDate(start.getDate() + i);
-
-        d.push(
-            x.toISOString().split("T")[0]
-        );
-    }
-
-    return d;
-}
-
-function getMeals(week, day){
-
-    if(
-        menuData[week] &&
-        menuData[week].dagar &&
-        menuData[week].dagar[day]
-    ){
-        return menuData[week].dagar[day].mat;
-    }
-
-    return [];
-}
-
-function renderWeek(){
-
-    document.getElementById("weekText").innerText =
-        "Vecka " + currentWeek;
-
-    const dates = getWeekDates(currentWeek);
-
-    const days = [
-        ["Måndag","måndag"],
-        ["Tisdag","tisdag"],
-        ["Onsdag","onsdag"],
-        ["Torsdag","torsdag"],
-        ["Fredag","fredag"]
-    ];
-
-    let html = "";
-
-    days.forEach((day, index) => {
-
-        const meals = getMeals(
-            currentWeek,
-            day[1]
-        );
-
-        const filteredMeals = meals.filter(
-            meal => meal.trim() !== ""
-        );
-
-        html += `
-        <div class="day">
-
-            <h3>${day[0]}</h3>
-
-            <div class="date">
-                ${dates[index]}
-            </div>
-
-            <div class="meal">
-
-                ${filteredMeals
-                    .map(meal => `<div>${meal}</div>`)
-                    .join("")
-                }
-
-            </div>
-
-        </div>
-        `;
-    });
-
-    document.getElementById("menuContent").innerHTML =
-        html;
-}
-
-document.getElementById("prevBtn").onclick = () => {
-
-    if(currentWeek > 1){
-
-        currentWeek--;
-
-        renderWeek();
-    }
-};
-
-document.getElementById("nextBtn").onclick = () => {
-
-    if(currentWeek < 52){
-
-        currentWeek++;
-
-        renderWeek();
-    }
-};
-
-renderWeek();
-
-</script>
 
 </body>
 </html>
