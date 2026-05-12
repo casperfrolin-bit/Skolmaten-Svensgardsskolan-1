@@ -32,10 +32,24 @@ body{
     background:#FFFFFF;
     color:#222;
 
-    /* LITE MER UTZOOMAT */
     zoom:1.14;
 
     overflow-y:auto;
+}
+
+/* =========================
+   LINKS / HOVER
+========================= */
+
+.hover-link{
+
+    transition:0.15s;
+    cursor:pointer;
+}
+
+.hover-link:hover{
+
+    color:#2d87aa;
 }
 
 /* =========================
@@ -154,19 +168,27 @@ body{
     display:flex;
     align-items:center;
 
-    gap:18px;
+    gap:14px;
 
     margin-left:18px;
 }
 
-/* SPRÅK */
+/* =========================
+   LANGUAGE
+========================= */
 
 .language{
 
     display:flex;
     align-items:center;
 
-    gap:6px;
+    gap:7px;
+
+    background:rgba(255,255,255,0.12);
+
+    padding:6px 10px;
+
+    border-radius:5px;
 
     color:white;
 
@@ -197,7 +219,18 @@ body{
     object-fit:cover;
 }
 
-/* LOGIN */
+/* LANGUAGE ARROW */
+
+.language-arrow{
+
+    font-size:16px;
+
+    opacity:0.9;
+}
+
+/* =========================
+   LOGIN
+========================= */
 
 .login{
 
@@ -242,11 +275,13 @@ body{
 
 .top-info{
 
-    margin-bottom:8px;
+    margin-bottom:10px;
 
-    color:#666;
+    color:#222;
 
-    font-size:13px;
+    font-size:15px;
+
+    font-weight:500;
 }
 
 /* =========================
@@ -257,11 +292,12 @@ body{
 
     display:flex;
     justify-content:space-between;
-    align-items:flex-start;
+    align-items:flex-end;
 
     border-bottom:3px solid #efb300;
 
-    padding-bottom:2px;
+    /* TITELN PRECIS OVANFÖR */
+    padding-bottom:0px;
 
     margin-bottom:12px;
 }
@@ -273,7 +309,9 @@ body{
     font-size:24px;
     font-weight:600;
 
-    line-height:1;
+    line-height:0.9;
+
+    padding-bottom:1px;
 }
 
 /* RIGHT */
@@ -412,9 +450,36 @@ body{
     font-size:15px;
 }
 
-.week-nav div{
+/* NAV BUTTON */
+
+.week-button{
+
+    display:flex;
+    align-items:center;
+
+    gap:6px;
+
+    color:#222;
 
     cursor:pointer;
+
+    transition:0.15s;
+}
+
+.week-button:hover{
+
+    color:#2d87aa;
+}
+
+/* ARROWS */
+
+.week-arrow{
+
+    font-size:20px;
+
+    color:#2d87aa;
+
+    line-height:1;
 }
 
 /* =========================
@@ -525,7 +590,7 @@ body{
 
     <div class="right-side">
 
-        <!-- SPRÅK -->
+        <!-- LANGUAGE -->
 
         <div class="language">
 
@@ -534,6 +599,10 @@ body{
             </div>
 
             Svenska
+
+            <span class="language-arrow">
+                ˅
+            </span>
 
         </div>
 
@@ -553,7 +622,7 @@ body{
 
 <div class="content">
 
-    <div class="top-info">
+    <div class="top-info hover-link">
         Helsingborgs stad
     </div>
 
@@ -579,7 +648,6 @@ body{
 
             <div class="city-logo">
 
-                <!-- BYT TILL DIN BILD -->
                 <img src="helsingborg.png">
 
             </div>
@@ -607,12 +675,24 @@ body{
 
     <div class="week-nav">
 
-        <div id="prevBtn">
-            ⬅ Föregående vecka
+        <div class="week-button" id="prevBtn">
+
+            <span class="week-arrow">
+                ‹
+            </span>
+
+            Föregående vecka
+
         </div>
 
-        <div id="nextBtn">
-            Nästa vecka ➡
+        <div class="week-button" id="nextBtn">
+
+            Nästa vecka
+
+            <span class="week-arrow">
+                ›
+            </span>
+
         </div>
 
     </div>
