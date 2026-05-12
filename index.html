@@ -184,13 +184,15 @@ body{
 
     gap:7px;
 
-    background:rgba(255,255,255,0.12);
+    height:33px;
 
-    padding:6px 10px;
+    background:#f2f2f2;
+
+    padding:0 11px;
 
     border-radius:5px;
 
-    color:white;
+    color:#222;
 
     font-size:13px;
 
@@ -198,6 +200,8 @@ body{
 
     white-space:nowrap;
 }
+
+/* FLAG */
 
 .flag{
 
@@ -207,8 +211,6 @@ body{
     border-radius:2px;
 
     overflow:hidden;
-
-    box-shadow:0 0 0 1px rgba(255,255,255,0.2);
 }
 
 .flag img{
@@ -223,9 +225,11 @@ body{
 
 .language-arrow{
 
-    font-size:16px;
+    font-size:19px;
 
-    opacity:0.9;
+    color:#666;
+
+    margin-left:1px;
 }
 
 /* =========================
@@ -275,6 +279,11 @@ body{
 
 .top-info{
 
+    display:flex;
+    align-items:center;
+
+    gap:4px;
+
     margin-bottom:10px;
 
     color:#222;
@@ -282,6 +291,17 @@ body{
     font-size:15px;
 
     font-weight:500;
+}
+
+/* TOP INFO ARROW */
+
+.top-info-arrow{
+
+    font-size:20px;
+
+    color:#2d87aa;
+
+    line-height:1;
 }
 
 /* =========================
@@ -296,7 +316,6 @@ body{
 
     border-bottom:3px solid #efb300;
 
-    /* TITELN PRECIS OVANFÖR */
     padding-bottom:0px;
 
     margin-bottom:12px;
@@ -307,11 +326,13 @@ body{
 .school-title{
 
     font-size:24px;
-    font-weight:600;
 
-    line-height:0.9;
+    font-weight:700;
 
-    padding-bottom:1px;
+    line-height:1;
+
+    /* LITE HÖGRE UPP */
+    padding-bottom:4px;
 }
 
 /* RIGHT */
@@ -457,7 +478,7 @@ body{
     display:flex;
     align-items:center;
 
-    gap:6px;
+    gap:7px;
 
     color:#222;
 
@@ -475,7 +496,7 @@ body{
 
 .week-arrow{
 
-    font-size:20px;
+    font-size:28px;
 
     color:#2d87aa;
 
@@ -623,7 +644,13 @@ body{
 <div class="content">
 
     <div class="top-info hover-link">
+
         Helsingborgs stad
+
+        <span class="top-info-arrow">
+            ›
+        </span>
+
     </div>
 
     <div class="school-header">
