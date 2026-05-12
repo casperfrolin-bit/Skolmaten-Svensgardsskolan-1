@@ -161,7 +161,7 @@ fredag: { mat: ["KLÄMDAG", ""] }
 }},
 
 21: { dagar: {
-måndag: { mat: ["", ""] },
+måndag: { mat: ["Potatisbullar med lingonsylt", ""] },
 tisdag: { mat: ["", ""] },
 onsdag: { mat: ["", ""] },
 torsdag: { mat: ["", ""] },
