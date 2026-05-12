@@ -6,6 +6,7 @@
 
 <title>Skolmaten</title>
 
+<!-- IKONER -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet">
 
 <style>
@@ -20,11 +21,15 @@
     box-sizing:border-box;
 }
 
+html,
+body{
+    min-height:100%;
+}
+
 body{
     font-family:"Segoe UI", Arial, sans-serif;
-    background:#f5f5f5;
+    background:#f3f3f3;
     color:#222;
-    min-height:100vh;
 }
 
 /* =========================
@@ -32,10 +37,15 @@ body{
 ========================= */
 
 .topbar{
+
+    position:fixed;
+    top:0;
+    left:0;
+
     width:100%;
     height:80px;
 
-    background:linear-gradient(90deg,#0f4d63,#05243c,#021327);
+    background:linear-gradient(90deg,#0d4b61,#03243c,#021326);
 
     display:flex;
     align-items:center;
@@ -43,18 +53,15 @@ body{
 
     padding:0 18px;
 
-    position:fixed;
-    top:0;
-    left:0;
     z-index:999;
 }
 
-/* LEFT SIDE */
+/* LEFT */
 
 .left-side{
     display:flex;
     align-items:center;
-    gap:25px;
+    gap:24px;
     width:100%;
 }
 
@@ -65,8 +72,8 @@ body{
     align-items:center;
 
     color:white;
-    font-weight:700;
     font-size:17px;
+    font-weight:700;
 
     min-width:170px;
 }
@@ -79,45 +86,58 @@ body{
 /* SEARCH */
 
 .search{
-    flex:1;
     position:relative;
+    width:100%;
 }
 
 .search input{
+
     width:100%;
     height:34px;
 
     border:none;
-    border-radius:6px;
+    border-radius:4px;
 
-    padding-left:42px;
+    background:#f1f1f1;
 
-    font-size:14px;
-
-    background:#f2f2f2;
+    padding-left:40px;
 
     outline:none;
+
+    font-size:14px;
 }
 
 .search .material-symbols-outlined{
+
     position:absolute;
-    left:12px;
+
+    left:10px;
     top:50%;
+
     transform:translateY(-50%);
+
+    font-size:18px;
+
     color:#777;
 }
 
-/* RIGHT SIDE */
+/* RIGHT */
 
 .right-side{
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:16px;
+}
+
+.language{
+    color:white;
+    font-size:14px;
 }
 
 .login{
     color:white;
     font-weight:600;
+    font-size:15px;
 }
 
 /* =========================
@@ -125,31 +145,39 @@ body{
 ========================= */
 
 .page{
+
     width:100%;
+
     display:flex;
     justify-content:center;
 
-    padding-top:145px;
-    padding-bottom:40px;
+    padding-top:120px;
+    padding-bottom:220px;
 }
 
 .content{
     width:100%;
-    max-width:620px;
+    max-width:480px;
 }
 
-/* TOP INFO */
+/* =========================
+   TOP INFO
+========================= */
 
 .top-info{
-    margin-bottom:16px;
+
+    margin-bottom:18px;
 
     color:#666;
     font-size:14px;
 }
 
-/* SCHOOL */
+/* =========================
+   SCHOOL HEADER
+========================= */
 
 .school-header{
+
     display:flex;
     justify-content:space-between;
     align-items:flex-start;
@@ -157,136 +185,219 @@ body{
     border-bottom:3px solid #efb300;
 
     padding-bottom:8px;
-    margin-bottom:18px;
-}
-
-.school-left{
-    display:flex;
-    flex-direction:column;
+    margin-bottom:14px;
 }
 
 .school-title{
-    font-size:30px;
 
-    /* SEMI BOLD */
+    font-size:20px;
     font-weight:600;
 }
 
-/* RIGHT ICON AREA */
+/* RIGHT SIDE */
 
 .school-right{
+
     display:flex;
     flex-direction:column;
     align-items:center;
+
     gap:8px;
 }
 
+/* ICONS */
+
 .top-icons{
+
     display:flex;
     gap:10px;
 }
 
 .top-icons .material-symbols-outlined{
+
     font-size:20px;
-    color:#4d8aa8;
+    color:#2d87aa;
+
     cursor:pointer;
 }
 
-/* HELSINGBORG LOGO */
+/* CITY LOGO */
 
 .city-logo{
-    width:44px;
-    height:44px;
+
+    width:36px;
+    height:36px;
+
     border-radius:50%;
+
     overflow:hidden;
 }
 
 .city-logo img{
+
     width:100%;
     height:100%;
+
     object-fit:cover;
 }
 
-/* WEEK */
+/* =========================
+   WEEK
+========================= */
 
 .week{
-    font-size:24px;
 
-    /* SEMI BOLD */
+    font-size:18px;
     font-weight:600;
 
-    margin-bottom:14px;
+    margin-bottom:6px;
 }
 
-/* DAYS */
+/* =========================
+   DAY
+========================= */
 
 .day{
-    border-bottom:1px solid #e7e7e7;
+
+    border-bottom:1px solid #e5e5e5;
+
     padding:14px 0;
 }
 
 .day h3{
-    font-size:18px;
 
-    /* SEMI BOLD */
+    font-size:16px;
     font-weight:600;
 
-    margin-bottom:3px;
+    margin-bottom:2px;
 }
 
 .date{
+
     font-size:12px;
     color:#888;
 
-    margin-bottom:8px;
+    margin-bottom:6px;
 }
 
 .meal{
-    font-size:15px;
+
+    font-size:14px;
     line-height:1.7;
 }
 
 .meal div{
+
     margin-bottom:2px;
 }
 
-/* INFO TEXT */
+/* =========================
+   INFO TEXT
+========================= */
 
 .menu-info{
-    margin-top:26px;
-    margin-bottom:20px;
+
+    margin-top:24px;
+    margin-bottom:18px;
+
+    color:#2d87aa;
 
     font-size:14px;
-    line-height:1.6;
-
-    color:#2d7ea3;
+    line-height:1.5;
 
     cursor:pointer;
 }
 
-/* NAVIGATION */
+/* =========================
+   WEEK NAV
+========================= */
 
 .week-nav{
+
     display:flex;
     justify-content:space-between;
 
     margin-top:10px;
 
     font-size:15px;
+}
+
+.week-nav div{
 
     cursor:pointer;
 }
 
-.week-nav div{
-    color:#222;
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    position:fixed;
+    bottom:0;
+    left:0;
+
+    width:100%;
+
+    background:linear-gradient(90deg,#0d4b61,#021326);
+
+    color:white;
+
+    padding:28px 50px;
+
+    display:flex;
+    justify-content:space-between;
+
+    z-index:998;
 }
 
-/* HOVER */
+/* FOOTER COLUMN */
 
-.week-nav div:hover,
-.menu-info:hover,
-.top-icons .material-symbols-outlined:hover{
-    opacity:0.8;
+.footer-column{
+
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.footer-title{
+
+    color:#efb300;
+
+    font-size:14px;
+    font-weight:700;
+
+    margin-bottom:6px;
+}
+
+.footer-column a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .footer{
+
+        position:relative;
+
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .page{
+
+        padding-bottom:40px;
+    }
+
 }
 
 </style>
@@ -302,20 +413,42 @@ body{
 
     <div class="left-side">
 
+        <!-- LOGO -->
+
         <div class="logo">
+
             <img src="skolmaten_transparent_background-83ac975b.svg">
+
             Skolmaten
+
         </div>
 
+        <!-- SEARCH -->
+
         <div class="search">
-            <span class="material-symbols-outlined">search</span>
+
+            <span class="material-symbols-outlined">
+                search
+            </span>
+
             <input type="text" placeholder="Sök">
+
         </div>
 
     </div>
 
+    <!-- RIGHT -->
+
     <div class="right-side">
-        <div class="login">Logga in</div>
+
+        <div class="language">
+            Svenska
+        </div>
+
+        <div class="login">
+            Logga in
+        </div>
+
     </div>
 
 </div>
@@ -328,23 +461,21 @@ body{
 
 <div class="content">
 
+    <!-- TOP -->
+
     <div class="top-info">
         Helsingborgs stad
     </div>
 
-    <!-- SCHOOL HEADER -->
+    <!-- SCHOOL -->
 
     <div class="school-header">
 
-        <div class="school-left">
-
-            <div class="school-title">
-                Svensgårdsskolan
-            </div>
-
+        <div class="school-title">
+            Svensgårdsskolan
         </div>
 
-        <!-- RIGHT SIDE -->
+        <!-- RIGHT -->
 
         <div class="school-right">
 
@@ -366,7 +497,7 @@ body{
 
             <div class="city-logo">
 
-                <!-- BYT TILL DIN FIL -->
+                <!-- LÄGG BILDEN HÄR -->
                 <img src="helsingborg.png">
 
             </div>
@@ -388,22 +519,79 @@ body{
     <!-- INFO -->
 
     <div class="menu-info">
+
         Vi strävar efter att erbjuda god och näringsrik mat varje dag.
         Till varje måltid serveras ett urval av grönsaker, anpassat efter
         säsong och vad som passar till dagens rätt. Vi lagar så mycket som
         möjligt från grunden och har som mål att använda så mycket ekologiska
         råvaror som vi kan. Vi reserverar oss för eventuella förändringar i
         matsedeln.
+
     </div>
 
     <!-- NAV -->
 
     <div class="week-nav">
-        <div id="prevBtn">⬅ Föregående vecka</div>
-        <div id="nextBtn">Nästa vecka ➡</div>
+
+        <div id="prevBtn">
+            ⬅ Föregående vecka
+        </div>
+
+        <div id="nextBtn">
+            Nästa vecka ➡
+        </div>
+
     </div>
 
 </div>
+
+</div>
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<div class="footer">
+
+    <!-- LEFT -->
+
+    <div class="footer-column">
+
+        <div class="footer-title">
+            Om Skolmaten
+        </div>
+
+        <a href="#">Information</a>
+        <a href="#">Cookies</a>
+        <a href="#">API</a>
+        <a href="#">Kontakta oss</a>
+
+    </div>
+
+    <!-- CENTER -->
+
+    <div class="footer-column">
+
+        <div class="footer-title">
+            Appar
+        </div>
+
+        <a href="#">iOS</a>
+        <a href="#">Android</a>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="footer-column">
+
+        <div class="footer-title">
+            Administration
+        </div>
+
+        <a href="#">Logga in</a>
+
+    </div>
 
 </div>
 
@@ -421,21 +609,21 @@ dagar: {
 
 måndag: {
 mat: [
-"Pasta Bolognese",
-"Vegetarisk pasta"
+"Pasta Bolognese på svensk köttråvara",
+"Färssås med pasta"
 ]
 },
 
 tisdag: {
 mat: [
-"Kycklinggryta med ris"
+"Fransk kycklinggryta med ris"
 ]
 },
 
 onsdag: {
 mat: [
-"Hamburgare",
-"Vegoburgare"
+"Pulled pork med bröd",
+"Pulled BBQ med bulgur"
 ]
 },
 
@@ -459,31 +647,31 @@ dagar: {
 
 måndag: {
 mat: [
-"Korv stroganoff"
+"Köttbullar med potatis"
 ]
 },
 
 tisdag: {
 mat: [
-"Fiskgratäng"
+"Lasagne"
 ]
 },
 
 onsdag: {
 mat: [
-"Lasagne"
+"Tacos"
 ]
 },
 
 torsdag: {
 mat: [
-"Köttbullar med potatis"
+"Fiskgratäng"
 ]
 },
 
 fredag: {
 mat: [
-"Tacos"
+"Pannkakor"
 ]
 }
 
@@ -493,7 +681,7 @@ mat: [
 };
 
 /* =========================
-   INSTÄLLNINGAR
+   STARTVECKA
 ========================= */
 
 let currentWeek = 20;
@@ -548,38 +736,6 @@ function getMeals(week, day){
 }
 
 /* =========================
-   SKAPA DAG
-========================= */
-
-function createDayHTML(name, key, date, meals){
-
-    const filteredMeals = meals.filter(
-        meal => meal.trim() !== ""
-    );
-
-    return `
-    <div class="day">
-
-        <h3>${name}</h3>
-
-        <div class="date">
-            ${date}
-        </div>
-
-        <div class="meal">
-
-            ${filteredMeals
-                .map(meal => `<div>${meal}</div>`)
-                .join("")
-            }
-
-        </div>
-
-    </div>
-    `;
-}
-
-/* =========================
    RENDER
 ========================= */
 
@@ -607,13 +763,30 @@ function renderWeek(){
             day[1]
         );
 
-        html += createDayHTML(
-            day[0],
-            day[1],
-            dates[index],
-            meals
+        const filteredMeals = meals.filter(
+            meal => meal.trim() !== ""
         );
 
+        html += `
+        <div class="day">
+
+            <h3>${day[0]}</h3>
+
+            <div class="date">
+                ${dates[index]}
+            </div>
+
+            <div class="meal">
+
+                ${filteredMeals
+                    .map(meal => `<div>${meal}</div>`)
+                    .join("")
+                }
+
+            </div>
+
+        </div>
+        `;
     });
 
     document.getElementById("menuContent").innerHTML =
