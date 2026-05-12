@@ -6,7 +6,7 @@
 
 <title>Skolmaten</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200;400;500" rel="stylesheet">
 
 <style>
 
@@ -81,7 +81,9 @@ body{
     z-index:999;
 }
 
-/* LEFT */
+/* =========================
+   LEFT
+========================= */
 
 .left-side{
 
@@ -93,7 +95,9 @@ body{
     width:100%;
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
 
 .logo{
 
@@ -225,11 +229,13 @@ body{
 
 .language-arrow{
 
-    font-size:19px;
+    font-size:12px;
 
     color:#666;
 
-    margin-left:1px;
+    margin-left:2px;
+
+    transform:translateY(-1px);
 }
 
 /* =========================
@@ -264,7 +270,9 @@ body{
     padding-bottom:90px;
 }
 
-/* CONTENT */
+/* =========================
+   CONTENT
+========================= */
 
 .content{
 
@@ -293,15 +301,17 @@ body{
     font-weight:500;
 }
 
-/* TOP INFO ARROW */
+/* PILEN I BÖRJAN */
 
 .top-info-arrow{
 
-    font-size:20px;
+    font-size:15px;
 
     color:#2d87aa;
 
     line-height:1;
+
+    font-weight:700;
 }
 
 /* =========================
@@ -331,11 +341,12 @@ body{
 
     line-height:1;
 
-    /* LITE HÖGRE UPP */
     padding-bottom:4px;
 }
 
-/* RIGHT */
+/* =========================
+   RIGHT
+========================= */
 
 .school-right{
 
@@ -346,24 +357,36 @@ body{
     gap:8px;
 }
 
-/* ICONS */
+/* =========================
+   ICONS
+========================= */
 
 .top-icons{
 
     display:flex;
-    gap:10px;
+    gap:12px;
 }
 
-.top-icons .material-symbols-outlined{
+/* STÖRRE + TJOCKARE */
 
-    font-size:18px;
+.top-icon{
+
+    font-size:22px !important;
+
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 24;
 
     color:#2d87aa;
 
     cursor:pointer;
 }
 
-/* RIGHT IMAGE */
+/* =========================
+   RIGHT IMAGE
+========================= */
 
 .city-logo{
 
@@ -455,6 +478,27 @@ body{
     line-height:1.5;
 
     cursor:pointer;
+}
+
+/* FLEX */
+
+.menu-info-top{
+
+    display:flex;
+    align-items:flex-start;
+
+    gap:8px;
+}
+
+/* LINK ICON */
+
+.menu-link-icon{
+
+    font-size:18px;
+
+    color:#2d87aa;
+
+    margin-top:1px;
 }
 
 /* =========================
@@ -557,7 +601,9 @@ body{
     font-size:14px;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:700px){
 
@@ -622,7 +668,7 @@ body{
             Svenska
 
             <span class="language-arrow">
-                ˅
+                ▼
             </span>
 
         </div>
@@ -645,11 +691,11 @@ body{
 
     <div class="top-info hover-link">
 
-        Helsingborgs stad
-
         <span class="top-info-arrow">
-            ›
+            ‹
         </span>
+
+        Helsingborgs stad
 
     </div>
 
@@ -663,11 +709,11 @@ body{
 
             <div class="top-icons">
 
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined top-icon">
                     print
                 </span>
 
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined top-icon">
                     rss_feed
                 </span>
 
@@ -691,12 +737,22 @@ body{
 
     <div class="menu-info">
 
-        Vi strävar efter att erbjuda god och näringsrik mat varje dag.
-        Till varje måltid serveras ett urval av grönsaker, anpassat efter
-        säsong och vad som passar till dagens rätt. Vi lagar så mycket som
-        möjligt från grunden och har som mål att använda så mycket ekologiska
-        råvaror som vi kan. Vi reserverar oss för eventuella förändringar i
-        matsedeln.
+        <div class="menu-info-top">
+
+            <span class="material-symbols-outlined menu-link-icon">
+                link
+            </span>
+
+            <span>
+                Vi strävar efter att erbjuda god och näringsrik mat varje dag.
+                Till varje måltid serveras ett urval av grönsaker, anpassat efter
+                säsong och vad som passar till dagens rätt. Vi lagar så mycket som
+                möjligt från grunden och har som mål att använda så mycket ekologiska
+                råvaror som vi kan. Vi reserverar oss för eventuella förändringar i
+                matsedeln.
+            </span>
+
+        </div>
 
     </div>
 
