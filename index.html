@@ -21,7 +21,6 @@ body{
     background:#f5f5f5;
     color:#222;
     min-height:100vh;
-    zoom:1.12;
 }
 
 /* =========================
@@ -30,7 +29,7 @@ body{
 
 .topbar{
     width:100%;
-    height:110px;
+    height:80px;
 
     background:linear-gradient(90deg,#0f4d63,#05243c,#021327);
 
@@ -46,6 +45,7 @@ body{
 }
 
 /* LEFT */
+
 .left-side{
     display:flex;
     align-items:center;
@@ -54,6 +54,7 @@ body{
 }
 
 /* LOGO */
+
 .logo{
     display:flex;
     align-items:center;
@@ -64,15 +65,14 @@ body{
 }
 
 .logo img{
-    height:52px;
+    height:42px;
     margin-right:8px;
 }
 
-/* 🔥 FIX: STOR SÖKBAR */
+/* SEARCH */
+
 .search{
     flex:1;
-    max-width:none;
-    width:100%;
     position:relative;
 }
 
@@ -96,6 +96,7 @@ body{
 }
 
 /* RIGHT */
+
 .right-side{
     display:flex;
     align-items:center;
@@ -115,7 +116,12 @@ body{
     width:100%;
     display:flex;
     justify-content:center;
-    padding-top:110px;
+
+    /* FLYTTAR NER MATSIDAN */
+    padding-top:150px;
+
+    /* MINDRE AVSTÅND TILL BOTTEN */
+    padding-bottom:30px;
 }
 
 .content{
@@ -123,12 +129,14 @@ body{
     max-width:620px;
 }
 
-/* TOP */
+/* TOP INFO */
 
 .top-info{
     display:flex;
     justify-content:space-between;
-    margin-bottom:12px;
+    margin-bottom:16px;
+    color:#555;
+    font-size:14px;
 }
 
 /* SCHOOL */
@@ -137,43 +145,45 @@ body{
     display:flex;
     justify-content:space-between;
     border-bottom:3px solid #efb300;
-    padding-bottom:7px;
-    margin-bottom:12px;
+    padding-bottom:8px;
+    margin-bottom:18px;
 }
 
 .school-title{
-    font-size:21px;
+    font-size:30px;
     font-weight:700;
 }
 
 /* WEEK */
 
 .week{
-    font-size:20px;
+    font-size:24px;
     font-weight:600;
-    margin-bottom:10px;
+    margin-bottom:14px;
 }
 
 /* DAYS */
 
 .day{
     border-bottom:1px solid #e7e7e7;
-    padding:12px 0;
+    padding:14px 0;
 }
 
 .day h3{
-    font-size:16px;
-    font-weight:600;
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:3px;
 }
 
 .date{
     font-size:12px;
     color:#888;
+    margin-bottom:8px;
 }
 
 .meal{
     font-size:15px;
-    margin-top:4px;
+    line-height:1.7;
 }
 
 /* NAV */
@@ -181,15 +191,16 @@ body{
 .week-nav{
     display:flex;
     justify-content:space-between;
-    margin-top:20px;
+    margin-top:24px;
     cursor:pointer;
+    font-size:15px;
 }
 
 /* FOOTER */
 
 .bottom-footer{
-    margin-top:40px;
-    padding:40px;
+    margin-top:30px;
+    padding:30px;
     background:linear-gradient(90deg,#0f4d63,#021327);
     color:white;
 }
@@ -198,6 +209,8 @@ body{
 </head>
 
 <body>
+
+<!-- TOPBAR -->
 
 <div class="topbar">
 
@@ -221,6 +234,8 @@ body{
 
 </div>
 
+<!-- PAGE -->
+
 <div class="page">
 
 <div class="content">
@@ -238,29 +253,94 @@ body{
     <div id="menuContent"></div>
 
     <div class="week-nav">
-        <div id="prevBtn">⬅ Föregående</div>
-        <div id="nextBtn">Nästa ➡</div>
+        <div id="prevBtn">⬅ Föregående vecka</div>
+        <div id="nextBtn">Nästa vecka ➡</div>
     </div>
 
 </div>
 
 </div>
 
+<!-- FOOTER -->
+
+<div class="bottom-footer">
+    Vi strävar efter att erbjuda god och näringsrik mat varje dag.
+</div>
+
 <script>
+
+/* =========================
+   MENYDATA
+========================= */
+
+const menuData = {
+
+20: {
+dagar: {
+
+måndag: {
+mat: [
+"Kattmat med bajs",
+"Andra alternativet"
+]
+},
+
+tisdag: {
+mat: [
+"Pannkakor",
+"Vegetarisk pannkaka"
+]
+},
+
+onsdag: {
+mat: [
+"Hamburgare",
+"Vegoburgare"
+]
+},
+
+torsdag: {
+mat: [
+"KRISTIHIMMELSFÄRD"
+]
+},
+
+fredag: {
+mat: [
+"KLÄMDAG"
+]
+}
+
+}
+}
+
+};
+
+/* =========================
+   VECKA
+========================= */
+
 let currentWeek = 20;
 
-/* ===== DATUM ===== */
+/* =========================
+   DATUM
+========================= */
+
 function getWeekDates(week){
 
     const start = new Date(2026,0,1);
-    start.setDate(start.getDate() + (week-1)*7);
+
+    start.setDate(start.getDate() + (week - 1) * 7);
+
     start.setDate(start.getDate() - start.getDay() + 1);
 
     let d = [];
 
-    for(let i=0;i<5;i++){
+    for(let i = 0; i < 5; i++){
+
         let x = new Date(start);
-        x.setDate(start.getDate()+i);
+
+        x.setDate(start.getDate() + i);
 
         d.push(x.toISOString().split("T")[0]);
     }
@@ -268,45 +348,90 @@ function getWeekDates(week){
     return d;
 }
 
-/* ===== DATA (fallback om menu.js saknas) ===== */
-const fallbackMenu = {
-    20:{
-        monday:"Pasta Bolognese på svensk köttråvara, samt grönsaksbuffé
-Färssås med pasta samt grönsaksbuffé",
-        tuesday:"Sopor",
-        wednesday:"Pulled pork på svensk köttråvara serveras med bröd, klyftpotatis och dressing samt grönsaksbuffé
-Pulled BBQ med bulgur och dressing samt grönsaksbuffé",
-        thursday:"KRISTIHIMMELSFÄRD",
-        friday:"KLÄMDAG"
-    }
-};
+/* =========================
+   HÄMTA MAT
+========================= */
 
-/* ===== RENDER ===== */
+function getMeals(week, day){
+
+    if(
+        menuData[week] &&
+        menuData[week].dagar &&
+        menuData[week].dagar[day]
+    ){
+        return menuData[week].dagar[day].mat;
+    }
+
+    return ["Ingen mat registrerad"];
+}
+
+/* =========================
+   RENDER
+========================= */
+
 function renderWeek(){
 
-    document.getElementById("weekText").innerText = "Vecka " + currentWeek;
+    document.getElementById("weekText").innerText =
+        "Vecka " + currentWeek;
 
     const dates = getWeekDates(currentWeek);
 
-    const data = (window.menu && menu[currentWeek]) ? menu[currentWeek] : fallbackMenu[currentWeek];
+    const dagar = [
+        ["Måndag","måndag"],
+        ["Tisdag","tisdag"],
+        ["Onsdag","onsdag"],
+        ["Torsdag","torsdag"],
+        ["Fredag","fredag"]
+    ];
 
-    document.getElementById("menuContent").innerHTML = `
-        <div class="day"><h3>Måndag</h3><div class="date">${dates[0]}</div><div class="meal">${data?.monday || ""}</div></div>
-        <div class="day"><h3>Tisdag</h3><div class="date">${dates[1]}</div><div class="meal">${data?.tuesday || ""}</div></div>
-        <div class="day"><h3>Onsdag</h3><div class="date">${dates[2]}</div><div class="meal">${data?.wednesday || ""}</div></div>
-        <div class="day"><h3>Torsdag</h3><div class="date">${dates[3]}</div><div class="meal">${data?.thursday || ""}</div></div>
-        <div class="day"><h3>Fredag</h3><div class="date">${dates[4]}</div><div class="meal">${data?.friday || ""}</div></div>
-    `;
+    let html = "";
+
+    dagar.forEach((dag, index) => {
+
+        const meals = getMeals(currentWeek, dag[1]);
+
+        html += `
+        <div class="day">
+
+            <h3>${dag[0]}</h3>
+
+            <div class="date">
+                ${dates[index]}
+            </div>
+
+            <div class="meal">
+                ${meals
+                    .filter(m => m.trim() !== "")
+                    .map(m => `<div>${m}</div>`)
+                    .join("")
+                }
+            </div>
+
+        </div>
+        `;
+    });
+
+    document.getElementById("menuContent").innerHTML = html;
 }
 
+/* =========================
+   BUTTONS
+========================= */
+
 document.getElementById("prevBtn").onclick = () => {
-    currentWeek--;
-    renderWeek();
+
+    if(currentWeek > 1){
+        currentWeek--;
+        renderWeek();
+    }
 };
 
 document.getElementById("nextBtn").onclick = () => {
-    currentWeek++;
-    renderWeek();
+
+    if(currentWeek < 52){
+        currentWeek++;
+        renderWeek();
+    }
 };
 
 renderWeek();
