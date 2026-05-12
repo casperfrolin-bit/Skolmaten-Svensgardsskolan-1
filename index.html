@@ -6,7 +6,6 @@
 
 <title>Skolmaten</title>
 
-<!-- IKONER -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200" rel="stylesheet">
 
 <style>
@@ -21,15 +20,16 @@
     box-sizing:border-box;
 }
 
-html,
 body{
-    min-height:100%;
-}
 
-body{
     font-family:"Segoe UI", Arial, sans-serif;
+
     background:#f3f3f3;
     color:#222;
+
+    zoom:1.12;
+
+    overflow-y:auto;
 }
 
 /* =========================
@@ -43,7 +43,7 @@ body{
     left:0;
 
     width:100%;
-    height:80px;
+    height:72px;
 
     background:linear-gradient(90deg,#0d4b61,#03243c,#021326);
 
@@ -59,52 +59,60 @@ body{
 /* LEFT */
 
 .left-side{
+
     display:flex;
     align-items:center;
-    gap:24px;
+
+    gap:22px;
+
     width:100%;
 }
 
 /* LOGO */
 
 .logo{
+
     display:flex;
     align-items:center;
 
     color:white;
-    font-size:17px;
+
+    font-size:16px;
     font-weight:700;
 
-    min-width:170px;
+    min-width:150px;
 }
 
 .logo img{
-    height:42px;
+
+    height:38px;
+
     margin-right:8px;
 }
 
 /* SEARCH */
 
 .search{
-    position:relative;
+
     width:100%;
+    position:relative;
 }
 
 .search input{
 
     width:100%;
-    height:34px;
+    height:30px;
 
     border:none;
     border-radius:4px;
 
-    background:#f1f1f1;
+    background:#f2f2f2;
 
-    padding-left:40px;
+    padding-left:36px;
 
     outline:none;
 
-    font-size:14px;
+    font-size:13px;
 }
 
 .search .material-symbols-outlined{
@@ -116,7 +124,7 @@ body{
 
     transform:translateY(-50%);
 
-    font-size:18px;
+    font-size:17px;
 
     color:#777;
 }
@@ -124,20 +132,19 @@ body{
 /* RIGHT */
 
 .right-side{
+
     display:flex;
     align-items:center;
+
     gap:16px;
 }
 
-.language{
-    color:white;
-    font-size:14px;
-}
-
 .login{
+
     color:white;
+
+    font-size:14px;
     font-weight:600;
-    font-size:15px;
 }
 
 /* =========================
@@ -151,13 +158,15 @@ body{
     display:flex;
     justify-content:center;
 
-    padding-top:120px;
-    padding-bottom:220px;
+    padding-top:100px;
+
+    padding-bottom:120px;
 }
 
 .content{
+
     width:100%;
-    max-width:480px;
+    max-width:470px;
 }
 
 /* =========================
@@ -166,10 +175,11 @@ body{
 
 .top-info{
 
-    margin-bottom:18px;
+    margin-bottom:10px;
 
     color:#666;
-    font-size:14px;
+
+    font-size:13px;
 }
 
 /* =========================
@@ -184,17 +194,18 @@ body{
 
     border-bottom:3px solid #efb300;
 
-    padding-bottom:8px;
-    margin-bottom:14px;
+    padding-bottom:6px;
+
+    margin-bottom:10px;
 }
 
 .school-title{
 
-    font-size:20px;
+    font-size:19px;
     font-weight:600;
 }
 
-/* RIGHT SIDE */
+/* RIGHT */
 
 .school-right{
 
@@ -202,7 +213,7 @@ body{
     flex-direction:column;
     align-items:center;
 
-    gap:8px;
+    gap:7px;
 }
 
 /* ICONS */
@@ -215,18 +226,19 @@ body{
 
 .top-icons .material-symbols-outlined{
 
-    font-size:20px;
+    font-size:18px;
+
     color:#2d87aa;
 
     cursor:pointer;
 }
 
-/* CITY LOGO */
+/* LOGO */
 
 .city-logo{
 
-    width:36px;
-    height:36px;
+    width:34px;
+    height:34px;
 
     border-radius:50%;
 
@@ -247,10 +259,10 @@ body{
 
 .week{
 
-    font-size:18px;
+    font-size:17px;
     font-weight:600;
 
-    margin-bottom:6px;
+    margin-bottom:2px;
 }
 
 /* =========================
@@ -261,34 +273,36 @@ body{
 
     border-bottom:1px solid #e5e5e5;
 
-    padding:14px 0;
+    padding:10px 0;
 }
 
 .day h3{
 
-    font-size:16px;
+    font-size:15px;
     font-weight:600;
 
-    margin-bottom:2px;
+    margin-bottom:1px;
 }
 
 .date{
 
-    font-size:12px;
+    font-size:11px;
+
     color:#888;
 
-    margin-bottom:6px;
+    margin-bottom:4px;
 }
 
 .meal{
 
-    font-size:14px;
-    line-height:1.7;
+    font-size:13px;
+
+    line-height:1.45;
 }
 
 .meal div{
 
-    margin-bottom:2px;
+    margin-bottom:1px;
 }
 
 /* =========================
@@ -297,19 +311,19 @@ body{
 
 .menu-info{
 
-    margin-top:24px;
-    margin-bottom:18px;
+    margin-top:20px;
+    margin-bottom:14px;
 
     color:#2d87aa;
 
-    font-size:14px;
-    line-height:1.5;
+    font-size:13px;
+    line-height:1.45;
 
     cursor:pointer;
 }
 
 /* =========================
-   WEEK NAV
+   NAV
 ========================= */
 
 .week-nav{
@@ -317,9 +331,9 @@ body{
     display:flex;
     justify-content:space-between;
 
-    margin-top:10px;
+    margin-top:8px;
 
-    font-size:15px;
+    font-size:14px;
 }
 
 .week-nav div{
@@ -333,10 +347,6 @@ body{
 
 .footer{
 
-    position:fixed;
-    bottom:0;
-    left:0;
-
     width:100%;
 
     background:linear-gradient(90deg,#0d4b61,#021326);
@@ -348,15 +358,16 @@ body{
     display:flex;
     justify-content:space-between;
 
-    z-index:998;
+    margin-top:80px;
 }
 
-/* FOOTER COLUMN */
+/* COLUMN */
 
 .footer-column{
 
     display:flex;
     flex-direction:column;
+
     gap:6px;
 }
 
@@ -379,23 +390,19 @@ body{
     font-size:14px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:700px){
 
-    .footer{
-
-        position:relative;
-
-        flex-direction:column;
-        gap:30px;
+    body{
+        zoom:1;
     }
 
-    .page{
+    .footer{
 
-        padding-bottom:40px;
+        flex-direction:column;
+
+        gap:30px;
     }
 
 }
@@ -405,15 +412,11 @@ body{
 
 <body>
 
-<!-- =========================
-     TOPBAR
-========================= -->
+<!-- TOPBAR -->
 
 <div class="topbar">
 
     <div class="left-side">
-
-        <!-- LOGO -->
 
         <div class="logo">
 
@@ -422,8 +425,6 @@ body{
             Skolmaten
 
         </div>
-
-        <!-- SEARCH -->
 
         <div class="search">
 
@@ -437,13 +438,7 @@ body{
 
     </div>
 
-    <!-- RIGHT -->
-
     <div class="right-side">
-
-        <div class="language">
-            Svenska
-        </div>
 
         <div class="login">
             Logga in
@@ -453,21 +448,15 @@ body{
 
 </div>
 
-<!-- =========================
-     PAGE
-========================= -->
+<!-- PAGE -->
 
 <div class="page">
 
 <div class="content">
 
-    <!-- TOP -->
-
     <div class="top-info">
         Helsingborgs stad
     </div>
-
-    <!-- SCHOOL -->
 
     <div class="school-header">
 
@@ -475,11 +464,7 @@ body{
             Svensgårdsskolan
         </div>
 
-        <!-- RIGHT -->
-
         <div class="school-right">
-
-            <!-- ICONS -->
 
             <div class="top-icons">
 
@@ -493,11 +478,8 @@ body{
 
             </div>
 
-            <!-- CITY LOGO -->
-
             <div class="city-logo">
 
-                <!-- LÄGG BILDEN HÄR -->
                 <img src="helsingborg.png">
 
             </div>
@@ -506,17 +488,11 @@ body{
 
     </div>
 
-    <!-- WEEK -->
-
     <div class="week" id="weekText">
         Vecka 20
     </div>
 
-    <!-- MENU -->
-
     <div id="menuContent"></div>
-
-    <!-- INFO -->
 
     <div class="menu-info">
 
@@ -528,8 +504,6 @@ body{
         matsedeln.
 
     </div>
-
-    <!-- NAV -->
 
     <div class="week-nav">
 
@@ -547,13 +521,9 @@ body{
 
 </div>
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <div class="footer">
-
-    <!-- LEFT -->
 
     <div class="footer-column">
 
@@ -568,8 +538,6 @@ body{
 
     </div>
 
-    <!-- CENTER -->
-
     <div class="footer-column">
 
         <div class="footer-title">
@@ -580,8 +548,6 @@ body{
         <a href="#">Android</a>
 
     </div>
-
-    <!-- RIGHT -->
 
     <div class="footer-column">
 
@@ -595,90 +561,11 @@ body{
 
 </div>
 
+<!-- HÄMTAR MENYDATA -->
+
+<script src="menu.js"></script>
+
 <script>
-
-/* =========================
-   MENYDATA
-   ÄNDRA BARA HÄR
-========================= */
-
-const menuData = {
-
-20: {
-dagar: {
-
-måndag: {
-mat: [
-"Pasta Bolognese på svensk köttråvara",
-"Färssås med pasta"
-]
-},
-
-tisdag: {
-mat: [
-"Fransk kycklinggryta med ris"
-]
-},
-
-onsdag: {
-mat: [
-"Pulled pork med bröd",
-"Pulled BBQ med bulgur"
-]
-},
-
-torsdag: {
-mat: [
-"KRISTIHIMMELSFÄRD"
-]
-},
-
-fredag: {
-mat: [
-"KLÄMDAG"
-]
-}
-
-}
-},
-
-21: {
-dagar: {
-
-måndag: {
-mat: [
-"Köttbullar med potatis"
-]
-},
-
-tisdag: {
-mat: [
-"Lasagne"
-]
-},
-
-onsdag: {
-mat: [
-"Tacos"
-]
-},
-
-torsdag: {
-mat: [
-"Fiskgratäng"
-]
-},
-
-fredag: {
-mat: [
-"Pannkakor"
-]
-}
-
-}
-}
-
-};
 
 /* =========================
    STARTVECKA
@@ -817,9 +704,7 @@ document.getElementById("nextBtn").onclick = () => {
     }
 };
 
-/* =========================
-   START
-========================= */
+/* START */
 
 renderWeek();
 
