@@ -161,27 +161,27 @@ fredag: { mat: ["KLÄMDAG", ""] }
 }},
 
 21: { dagar: {
-måndag: { mat: ["Pelafel med nyplockad potatis, kokadnde sås samt grönsaksbuffé", "Pasta pesto med 25000k liter okja samt grönsaksbuffé"] },
-tisdag: { mat: ["Rysk kycklinggryta på på kinesiska hundar serveras med bönor samt grönsaksbuffé", "Polsk gryta serveras med glutenfri pasta samt grönsaksbuffé"] },
-onsdag: { mat: ["Trippelpanerad lime serveras med mojo rojo, fryst potatis samt grönsaksbuffé", "Fisk som har drunknat med tzatziki och het aivar"] },
-torsdag: { mat: ["Falukorv på svensk köttråvara med stuvade makaroner, rostad blomkål samt grönsaksbuffé", "Korv serveras med rostad potatis samt grönsaksbuffé"] },
+måndag: { mat: ["Pelafel med nyplockad potatis, varm sås samt grönsaksbuffé", "Pasta pesto med olja samt grönsaksbuffé"] },
+tisdag: { mat: ["Rysk kycklinggryta på på svensk köttråvara serveras med bönor samt grönsaksbuffé", "Polsk gryta serveras med glutenfri pasta samt grönsaksbuffé"] },
+onsdag: { mat: ["Trippelpanerad Fisk serveras med olika Såser, kokt potatis samt grönsaksbuffé", "Vegansk Wok serverad med olika såser och het aivar"] },
+torsdag: { mat: ["Tjockare korv på svensk kyckling med stekta makaroner, ugnsrostad blomkål samt grönsaksbuffé", "Korv serveras med rostad potatis samt grönsaksbuffé"] },
 fredag: { mat: ["Picknickbowl", "Picknickbowl"] }
 }},
 
 22: { dagar: {
-måndag: { mat: ["", ""] },
-tisdag: { mat: ["", ""] },
-onsdag: { mat: ["", ""] },
-torsdag: { mat: ["", ""] },
-fredag: { mat: ["", ""] }
+måndag: { mat: ["Bakad potatis med kökets topping och röror samt grönsaksbuffé", "Riswok serveras med grönsaksbuffé"] },
+tisdag: { mat: ["Raggmunkskaka eller blodpudding serveras med bacon på svensk köttråvara, lingonsylt samt grönsaksbuffé", "American style Mac and cheese serveras med grönsaksbuffé"] },
+onsdag: { mat: ["Kall Kycklingpasta på svensk fågel samt grönsaksbuffé", "Kökets pastasalad på svensk köttråvara serveras med grönsaksbuffé"] },
+torsdag: { mat: ["Burgare med bröd serveras med dressing, friterade pommes samt grönsaksbuffé", "Kökets vegitariska biffar med samtliga tillbehör"] },
+fredag: { mat: ["Gårdsbiffar på svensk fisk med sås och ris samt grönsaksbuffé", "Färslåda serveras med grönsaksbuffé"] }
 }},
 
 23: { dagar: {
-måndag: { mat: ["", ""] },
-tisdag: { mat: ["", ""] },
-onsdag: { mat: ["", ""] },
-torsdag: { mat: ["", ""] },
-fredag: { mat: ["", ""] }
+måndag: { mat: ["Vi återkommer med mer information senare", ""] },
+tisdag: { mat: ["Fläskytterfilé på svenska kycklingar serveras med såser, kokt potatis och grönsaksbuffé", "Vegitarisk schnitzel serveras med rostad potatis, såsbuffé samt grönsaksbuffé"] },
+onsdag: { mat: ["Vi återkommer med mer information senare", ""] },
+torsdag: { mat: ["Kökets val", ""] },
+fredag: { mat: ["Skolavslutning", ""] }
 }},
 
 24: { dagar: {
