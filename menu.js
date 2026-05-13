@@ -161,9 +161,9 @@ fredag: { mat: ["KLÄMDAG", ""] }
 }},
 
 21: { dagar: {
-måndag: { mat: ["Falafel med rostad potatis, kall sås samt grönsaksbuffé", "Pasta pesto samt grönsaksbuffé"] },
-tisdag: { mat: ["Indisk kycklinggryta på svensk köttråvara serveras med ris samt grönsaksbuffé", "Indisk gryta serveras med havreris samt grönsaksbuffé"] },
-onsdag: { mat: ["Dubbelpanerad torsk serveras med hollandaise, kokt potatis samt grönsaksbuffé", "Bulgurwok med tzatziki och aivar"] },
+måndag: { mat: ["Pelafel med nyplockad potatis, kokadnde sås samt grönsaksbuffé", "Pasta pesto med 25000k liter okja samt grönsaksbuffé"] },
+tisdag: { mat: ["Rysk kycklinggryta på på kinesiska hundar serveras med bönor samt grönsaksbuffé", "Polsk gryta serveras med glutenfri pasta samt grönsaksbuffé"] },
+onsdag: { mat: ["Trippelpanerad lime serveras med mojo rojo, fryst potatis samt grönsaksbuffé", "Fisk som har drunknat med tzatziki och het aivar"] },
 torsdag: { mat: ["Falukorv på svensk köttråvara med stuvade makaroner, rostad blomkål samt grönsaksbuffé", "Korv serveras med rostad potatis samt grönsaksbuffé"] },
 fredag: { mat: ["Picknickbowl", "Picknickbowl"] }
 }},
