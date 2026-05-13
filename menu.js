@@ -155,7 +155,7 @@ fredag: { mat: ["", ""] }
 20: { dagar: {
 måndag: { mat: ["Pasta Bolognese på svensk köttråvara, samt grönsaksbuffé", "Färssås med pasta samt grönsaksbuffé"] },
 tisdag: { mat: ["Fransk kycklinggryta på svensk köttråvara serveras med ris samt grönsaksbuffé", "Kökets paj serveras med grönsaksbuffé"] },
-onsdag: { mat: ["Pulled pork på svensk köttråvara serveras med bröd, klyftpotatis och dressing samt grönsaksbuffé", "Pulled BBQ med bulgur och dressing samt grönsaksbuffé"] },
+onsdag: { mat: ["INGEN MAT IDAG!", "Pulled BBQ med bulgur och dressing samt grönsaksbuffé"] },
 torsdag: { mat: ["KRISTIHIMMELSFÄRD", ""] },
 fredag: { mat: ["KLÄMDAG", ""] }
 }},
