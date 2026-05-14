@@ -4,7 +4,7 @@ const menuData = {
 måndag: { mat: ["Lovmat", ""] },
 tisdag: { mat: ["Lovmat", ""] },
 onsdag: { mat: ["Jullov", ""] },
-torsdag: { mat: ["Jullov", ""] },
+torsdag: { "#c64e4e", mat: ["Jullov", ""] },
 fredag: { mat: ["Lovmat", ""] }
 }},
 
@@ -155,7 +155,7 @@ fredag: { mat: ["Köttfärslimpa på svensk köttråvara serveras med sås, kokt
 20: { dagar: {
 måndag: { mat: ["Pasta Bolognese på svensk köttråvara, samt grönsaksbuffé", "Färssås med pasta samt grönsaksbuffé"] },
 tisdag: { mat: ["Fransk kycklinggryta på svensk köttråvara serveras med ris samt grönsaksbuffé", "Kökets paj serveras med grönsaksbuffé"] },
-onsdag: { mat: ["INGEN MAT IDAG!", "Pulled BBQ med bulgur och dressing samt grönsaksbuffé"] },
+onsdag: { mat: ["Pulled pork på svensk köttråvara serveras med bröd, klyftpotatis och dressing samt grönsaksbuffé", "Pulled BBQ med bulgur och dressing samt grönsaksbuffé"] },
 torsdag: { mat: ["KRISTIHIMMELSFÄRD", ""] },
 fredag: { mat: ["KLÄMDAG", ""] }
 }},
@@ -415,6 +415,56 @@ onsdag: { mat: ["", ""] },
 torsdag: { mat: ["", ""] },
 fredag: { mat: ["", ""] }
 }}
+
+  function visaMeny(vecka) {
+
+    const dagar = menuData[vecka].dagar;
+
+    let html = "";
+
+    for (const dag in dagar) {
+
+        const mat = dagar[dag].mat;
+
+        // standardfärg om ingen färg finns
+        const färg = dagar[dag].färg || "#000000";
+
+        // om båda är tomma
+        if (mat[0].trim() === "" && mat[1].trim() === "") {
+
+            html += `
+                <div>
+                    <h3>${dag}</h3>
+                    <div style="color:#9e9e9e;">
+                        Meny saknas
+                    </div>
+                </div>
+            `;
+
+        } else {
+
+            html += `
+                <div>
+
+                    <h3>${dag}</h3>
+
+                    ${mat[0]
+                        ? `<div style="color:${färg};">${mat[0]}</div>`
+                        : ""
+                    }
+
+                    ${mat[1]
+                        ? `<div style="color:${färg};">${mat[1]}</div>`
+                        : ""
+                    }
+
+                </div>
+            `;
+        }
+    }
+
+    document.getElementById("menu").innerHTML = html;
+}
 
 
 };
