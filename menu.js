@@ -3,14 +3,14 @@ const menuData = {
 1: { dagar: {
 måndag: { mat: ["Lovmat", ""] },
 tisdag: { mat: ["Lovmat", ""] },
-onsdag: { färg: "#c64e4e", mat: ["Jullov", ""] },
-torsdag: { färg: "#c64e4e", mat: ["Jullov", ""] },
+onsdag: { mat: ["Jullov", ""] },
+torsdag: { mat: ["Jullov", ""] },
 fredag: { mat: ["Lovmat", ""] }
 }},
 
 2: { dagar: {
 måndag: { mat: ["Lovmat", ""] },
-tisdag: { färg: "#c64e4e", mat: ["Jullov", ""] },
+tisdag: { mat: ["Jullov", ""] },
 onsdag: { mat: ["Studiedag", ""] },
 torsdag: { mat: ["Potatisbullar eller Blodpudding serveras med svensk tärnad skinka, lingonsylt samt grönsaksbuffé", "Mac and cheese samt grönsaksbuffé"] },
 fredag: { mat: ["Kycklingpasta på svensk köttråvara samt grönsaksbuffé", "Kökets paj samt grönsaksbuffé"] }
@@ -57,11 +57,11 @@ fredag: { mat: ["Dubbelpanerad torsk serveras med hollandaise, kokt potatis samt
 }},
 
 8: { dagar: {
-måndag: { färg: "#c64e4e", mat: ["Sportlov", ""] },
-tisdag: { färg: "#c64e4e", mat: ["Sportlov", ""] },
-onsdag: { färg: "#c64e4e", mat: ["Sportlov", ""] },
-torsdag: { färg: "#c64e4e", mat: ["Sportlov", ""] },
-fredag: { färg: "#c64e4e", mat: ["Sportlov", ""] }
+måndag: { mat: ["Sportlov", ""] },
+tisdag: { mat: ["Sportlov", ""] },
+onsdag: { mat: ["Sportlov", ""] },
+torsdag: { mat: ["Sportlov", ""] },
+fredag: { mat: ["Sportlov", ""] }
 }},
 
 9: { dagar: {
