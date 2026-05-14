@@ -416,10 +416,5 @@ torsdag: { mat: ["", ""] },
 fredag: { mat: ["", ""] }
 }}
 
-  const mat = dagar[dag].mat;
-
-if (mat[0].trim() === "" && mat[1].trim() === "") {
-    html += `<div style="color:#9e9e9e;">Meny saknas</div>`;
-}
 
 };
