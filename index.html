@@ -80,6 +80,7 @@ body{
 
     z-index:999;
 }
+
 /* =========================
    LEFT
 ========================= */
@@ -510,7 +511,7 @@ body{
 }
 
 /* =========================
-   NAVoga
+   NAV
 ========================= */
 
 .week-nav{
@@ -667,8 +668,6 @@ body{
 
     <div class="right-side">
 
-        <!-- LANGUAGE -->
-
         <div class="language">
 
             <div class="flag">
@@ -682,8 +681,6 @@ body{
             </span>
 
         </div>
-
-        <!-- LOGIN -->
 
         <div class="login">
             Logga in
@@ -740,7 +737,7 @@ body{
     </div>
 
     <div class="week" id="weekText">
-        Vecka 20
+        Vecka
     </div>
 
     <div id="menuContent"></div>
@@ -756,10 +753,9 @@ body{
             <span>
                 Vi strävar efter att erbjuda god och näringsrik mat varje dag.
                 Till varje måltid serveras ett urval av grönsaker, anpassat efter
-                säsong och vad som passar till dagens rätt. Vi lagar så mycket som
-                möjligt från grunden och har som mål att använda så mycket ekologiska
-                råvaror som vi kan. Vi reserverar oss för eventuella förändringar i
-                matsedeln.
+                säsong och vad som passar till dagens rätt. Vi lagar så mycket
+                som möjligt från grunden och har som mål att använda så mycket
+                ekologiska råvaror som vi kan.
             </span>
 
         </div>
@@ -838,35 +834,88 @@ body{
 
 <script>
 
-let currentWeek = 20;
+/* =========================
+   HÄMTA AKTUELL VECKA
+========================= */
+
+function getCurrentWeek(){
+
+    const now = new Date();
+
+    now.setHours(0,0,0,0);
+
+    now.setDate(
+        now.getDate() + 3 - ((now.getDay() + 6) % 7)
+    );
+
+    const week1 = new Date(
+        now.getFullYear(),
+        0,
+        4
+    );
+
+    return 1 + Math.round(
+        (
+            (
+                now.getTime() -
+                week1.getTime()
+            ) / 86400000
+            - 3
+            + ((week1.getDay() + 6) % 7)
+        ) / 7
+    );
+}
+
+/* AKTUELL VECKA */
+
+let currentWeek = getCurrentWeek();
+
+/* =========================
+   DATUM FÖR VECKA
+========================= */
 
 function getWeekDates(week){
 
-    const start = new Date(2026,0,1);
+    const year = new Date().getFullYear();
 
-    start.setDate(
-        start.getDate() + (week - 1) * 7
-    );
+    const simple = new Date(year, 0, 1 + (week - 1) * 7);
 
-    start.setDate(
-        start.getDate() - start.getDay() + 1
-    );
+    const dayOfWeek = simple.getDay();
 
-    let d = [];
+    const monday = new Date(simple);
 
-    for(let i = 0; i < 5; i++){
+    if(dayOfWeek <= 4){
 
-        let x = new Date(start);
+        monday.setDate(
+            simple.getDate() - simple.getDay() + 1
+        );
 
-        x.setDate(start.getDate() + i);
+    }else{
 
-        d.push(
-            x.toISOString().split("T")[0]
+        monday.setDate(
+            simple.getDate() + 8 - simple.getDay()
         );
     }
 
-    return d;
+    let dates = [];
+
+    for(let i = 0; i < 5; i++){
+
+        let d = new Date(monday);
+
+        d.setDate(monday.getDate() + i);
+
+        dates.push(
+            d.toLocaleDateString("sv-SE")
+        );
+    }
+
+    return dates;
 }
+
+/* =========================
+   HÄMTA MAT
+========================= */
 
 function getMeals(week, day){
 
@@ -878,8 +927,12 @@ function getMeals(week, day){
         return menuData[week].dagar[day].mat;
     }
 
-    return [];
+    return ["Ingen matsedel tillgänglig"];
 }
+
+/* =========================
+   VISA VECKA
+========================= */
 
 function renderWeek(){
 
@@ -935,6 +988,10 @@ function renderWeek(){
         html;
 }
 
+/* =========================
+   KNAPPAR
+========================= */
+
 document.getElementById("prevBtn").onclick = () => {
 
     if(currentWeek > 1){
@@ -954,6 +1011,8 @@ document.getElementById("nextBtn").onclick = () => {
         renderWeek();
     }
 };
+
+/* START */
 
 renderWeek();
 
