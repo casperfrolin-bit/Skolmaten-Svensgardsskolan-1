@@ -177,9 +177,9 @@ fredag: { mat: ["Gårdsbiffar på svensk fisk med sås och ris samt grönsaksbuf
 }},
 
 23: { dagar: {
-måndag: { mat: ["Vi återkommer med mer information senare", ""] },
+måndag: { mat: ["Fispinnar  med potatis, såser sam grönsaksbuffé", "Nuggets med vegitarisk innehåll, bulgur samt grönsaksbuffé"] },
 tisdag: { mat: ["Fläskytterfilé på svenska kycklingar serveras med såser, kokt potatis och grönsaksbuffé", "Vegitarisk schnitzel serveras med rostad potatis, såsbuffé samt grönsaksbuffé"] },
-onsdag: { mat: ["Vi återkommer med mer information senare", ""] },
+onsdag: { mat: ["Kökets pastasallad med skolbakat bröd samt grönsakasbuffé", "Kökets tacopaj rotfruksbuffé"] },
 torsdag: { mat: ["Kökets val", ""] },
 fredag: { mat: ["Skolavslutning", ""] }
 }},
