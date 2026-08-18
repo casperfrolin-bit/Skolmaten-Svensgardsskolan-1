@@ -265,8 +265,8 @@ fredag: { mat: ["", ""] }
 }},
 
 34: { dagar: {
-måndag: { mat: ["", ""] },
-tisdag: { mat: ["", ""] },
+måndag: { mat: ["Lovmat", "Lovmat"] },
+tisdag: { mat: ["Chili med carne med trippelris samt grönsaksbuffé", "Sprödbakade fiskar med rostad brokkoli, mild dipp sås samt grönsaksbuffé"] },
 onsdag: { mat: ["", ""] },
 torsdag: { mat: ["", ""] },
 fredag: { mat: ["", ""] }
