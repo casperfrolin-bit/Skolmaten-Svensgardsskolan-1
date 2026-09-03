@@ -281,7 +281,7 @@ fredag: { mat: ["", ""] }
 }},
 
 36: { dagar: {
-måndag: { mat: ["", ""] },
+måndag: { mat: ["test", ""] },
 tisdag: { mat: ["", ""] },
 onsdag: { mat: ["", ""] },
 torsdag: { mat: ["", ""] },
