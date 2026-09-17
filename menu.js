@@ -300,7 +300,7 @@ fredag: { mat: ["", ""] }
 måndag: { mat: ["", ""] },
 tisdag: { mat: ["", ""] },
 onsdag: { mat: ["", ""] },
-torsdag: { mat: ["", ""] },
+torsdag: { mat: ["icke fisk med dyr pasta", ""] },
 fredag: { mat: ["", ""] }
 }},
 
